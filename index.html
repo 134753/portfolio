@@ -162,7 +162,7 @@
             <!-- Carrousel / grille -->
             <div id="carousel" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth md:flex-wrap md:justify-center md:overflow-visible gap-6 md:gap-14 px-2">
 
-            <div onclick="openModal('modal1')" class="w-full shrink-0 snap-start md:w-[250px] md:h-[350px] bg-gray-900 shadow-xl shadow-black rounded-xl p-4 overflow-hidden relative cursor-pointer group">
+            <div data-aos="fade-right" onclick="openModal('modal1')" class="w-full shrink-0 snap-start md:w-[250px] md:h-[350px] bg-gray-900 shadow-xl shadow-black rounded-xl p-4 overflow-hidden relative cursor-pointer group">
                 <img class="mx-auto h-[150px] rounded-lg mb-3" src="assets/fa4f0db883d36fbfcfe76c06d9012be0-removebg-preview.png" alt="logo Madrid">
                 <h4 class="text-[#15BFA3] text-lg">Mini-blog Real Madrid</h4>
                 <p class="text-sm mt-4">Développement d'un blog sur le Réal Madrid en HTML/CSS.</p>
@@ -419,72 +419,7 @@
         </div>                
 
     </section>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const tracks = document.querySelectorAll('.track');
-            const playButtons = document.querySelectorAll('i.fa-circle-play, i.fa-pause-circle');
-            const audios = document.querySelectorAll('audio');
         
-            function pauseAllTracks() {
-                audios.forEach(audio => {
-                    audio.pause();
-                    audio.currentTime = 0;
-                    audio.volume = 1; // Remettre volume normal
-                });
-                playButtons.forEach(button => {
-                    button.classList.remove('fa-pause-circle');
-                    button.classList.add('fa-circle-play');
-                });
-            }
-        
-            function fadeOut(audio, button) {
-                let fadeAudio = setInterval(() => {
-                    if (audio.volume > 0.1) {
-                        audio.volume -= 0.1;
-                    } else {
-                        audio.volume = 0;
-                        audio.pause();
-                        audio.currentTime = 0;
-                        audio.volume = 1; // Remettre volume pour la prochaine fois
-                        button.classList.remove('fa-pause-circle');
-                        button.classList.add('fa-circle-play');
-                        clearInterval(fadeAudio);
-                    }
-                }, 100); // tous les 100ms, on baisse un peu
-            }
-        
-            playButtons.forEach((button, index) => {
-                const currentAudio = audios[index];
-        
-                button.addEventListener('click', () => {
-                    if (currentAudio.paused) {
-                        pauseAllTracks();
-                        currentAudio.play();
-                        button.classList.remove('fa-circle-play');
-                        button.classList.add('fa-pause-circle');
-                    } else {
-                        currentAudio.pause();
-                        button.classList.remove('fa-pause-circle');
-                        button.classList.add('fa-circle-play');
-                    }
-                });
-        
-                currentAudio.addEventListener('timeupdate', () => {
-                    if (currentAudio.currentTime >= 29) { 
-                        // Dès 29s, on commence fade-out pour que à 30s tout soit stoppé
-                        fadeOut(currentAudio, button);
-                    }
-                });
-        
-                currentAudio.addEventListener('ended', () => {
-                    button.classList.remove('fa-pause-circle');
-                    button.classList.add('fa-circle-play');
-                });
-            });
-        });
-        </script>
-        
-
     <section data-aos="fade-up"
     data-aos-anchor-placement="top-bottom" id="contact" class="mt-20 text-center">
         <h2 class="text-[28px] text-[#15BFA3] mb-2">Me Contacter</h2>
@@ -533,6 +468,7 @@
     </footer>
 
     <script src="main.js"></script>
+    <script src="music.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
