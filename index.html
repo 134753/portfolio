@@ -394,7 +394,7 @@
                         <img class="h-[30px] w-[30px] shadow-md shadow-black m-2" src="assets/33ae24b06e0922019f94b686fbecf016.1000x1000x1.jpg" alt="">
                         <div class="mt-2 text-start w-[55%]">
                             <h6 class="text-[12px] font-semibold">Dis-moi</h6>
-                            <p class="text-[8px]">Oxmo Puccino, Luidji & Tuerie</p>
+                            <p class="text-[8px]">Oxmo Puccino, Luidji & Tueurie</p>
                         </div>
                         
                         <!-- Bouton Play -->
@@ -409,16 +409,21 @@
                         
                           playButton.addEventListener('click', () => {
                             if (audioPlayer.paused) {
-                              audioPlayer.play();
-                              playButton.classList.remove('fa-circle-play');
-                              playButton.classList.add('fa-pause-circle');
+                              // Essayer de démarrer l'audio
+                              audioPlayer.play().then(() => {
+                                playButton.classList.remove('fa-circle-play');
+                                playButton.classList.add('fa-pause-circle');
+                              }).catch((error) => {
+                                console.error("Erreur de lecture audio:", error);
+                                alert("Impossible de lire l'extrait audio.");
+                              });
                             } else {
                               audioPlayer.pause();
                               playButton.classList.remove('fa-pause-circle');
                               playButton.classList.add('fa-circle-play');
                             }
                           });
-                        </script>
+                        </script>                        
                         
                         
                     </div>
