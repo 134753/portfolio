@@ -392,34 +392,38 @@
 
                     <div data-aos="fade-right" class="w-full sm:w-[48%] md:w-[30%] flex bg-blue-900 text-white border border-blue-900 rounded-xl p-2 relative shadow-md transform transition duration-300 hover:scale-105 hover:shadow-[0_4px_20px_rgba(72,118,255,0.6)] hover:brightness-110">
                         <img class="h-[30px] w-[30px] shadow-md shadow-black m-2" src="assets/33ae24b06e0922019f94b686fbecf016.1000x1000x1.jpg" alt="">
-                        <div class="relative w-[300px] h-[80px]">
-                            <iframe id="youtubePlayer" src="https://www.youtube.com/embed/{YOUTUBE_VIDEO_ID}?autoplay=1&controls=0&modestbranding=1&mute=0" 
-                                style="position:absolute; width:1px; height:1px; opacity:0;"
-                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <div class="mt-2 text-start w-[55%]">
+                            <h6 class="text-[12px] font-semibold">Dis-moi</h6>
+                            <p class="text-[8px]">Oxmo Puccino, Luidji & Tueurie</p>
                         </div>
                         
-                        <!-- Un bouton Play -->
+                        <!-- Bouton Play -->
                         <i id="playButton" class="fa-solid fa-circle-play text-[20px] mt-4 ml-4 hover:text-gray-500 cursor-pointer"></i>
                         
-                        <script>
-                        let playerIframe = document.getElementById('youtubePlayer');
-                        let playButton = document.getElementById('playButton');
-                        let isPlaying = false;
+                        <!-- Balise audio cachée -->
+                        <audio id="audioPlayer" src="https://cdns-preview-3.dzcdn.net/stream/c-3cf2df472d9c2e898dcbbb9f7f86c56e-3.mp3"></audio>
                         
-                        playButton.addEventListener('click', function () {
-                            if (!isPlaying) {
-                                playerIframe.src = "https://www.youtube.com/embed/{YOUTUBE_VIDEO_ID}?autoplay=1&controls=0&modestbranding=1&mute=0";
+                        <script>
+                          const playButton = document.getElementById('playButton');
+                          const audioPlayer = document.getElementById('audioPlayer');
+                        
+                          playButton.addEventListener('click', () => {
+                            if (audioPlayer.paused) {
+                              // Essayer de démarrer l'audio
+                              audioPlayer.play().then(() => {
                                 playButton.classList.remove('fa-circle-play');
                                 playButton.classList.add('fa-pause-circle');
-                                isPlaying = true;
+                              }).catch((error) => {
+                                console.error("Erreur de lecture audio:", error);
+                                alert("Impossible de lire l'extrait audio.");
+                              });
                             } else {
-                                playerIframe.src = "";
-                                playButton.classList.remove('fa-pause-circle');
-                                playButton.classList.add('fa-circle-play');
-                                isPlaying = false;
+                              audioPlayer.pause();
+                              playButton.classList.remove('fa-pause-circle');
+                              playButton.classList.add('fa-circle-play');
                             }
-                        });
-                        </script>                                           
+                          });
+                        </script>                        
                         
                         
                     </div>
