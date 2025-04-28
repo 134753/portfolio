@@ -394,20 +394,32 @@
                         <img class="h-[30px] w-[30px] shadow-md shadow-black m-2" src="assets/33ae24b06e0922019f94b686fbecf016.1000x1000x1.jpg" alt="">
                         <div class="mt-2 text-start w-[55%]">
                             <h6 class="text-[12px] font-semibold">Dis-moi</h6>
-                            <p class="text-[8px]">Oxmo Puccino, Luidji & Tueurie</p>
+                            <p class="text-[8px]">Oxmo Puccino, Luidji & Tuerie</p>
                         </div>
-                        <i class="fa-solid fa-circle-play text-[20px] mt-4 ml-4 hover:text-gray-500 cursor-pointer" id="playButton"></i>
                         
-                        <!-- L'iframe caché au début -->
-                        <iframe id="spotifyPlayer" src="https://open.spotify.com/embed/track/7ycCr5IMXRijvOLLmObAqW" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-
+                        <!-- Bouton Play -->
+                        <i id="playButton" class="fa-solid fa-circle-play text-[20px] mt-4 ml-4 hover:text-gray-500 cursor-pointer"></i>
+                        
+                        <!-- Balise audio cachée -->
+                        <audio id="audioPlayer" src="https://cdns-preview-3.dzcdn.net/stream/c-3cf2df472d9c2e898dcbbb9f7f86c56e-3.mp3"></audio>
                         
                         <script>
-                            document.getElementById('playButton').addEventListener('click', function() {
-                                const iframe = document.getElementById('spotifyPlayer');
-                                iframe.classList.toggle('hidden'); // Affiche/masque l'iframe
-                            });
+                          const playButton = document.getElementById('playButton');
+                          const audioPlayer = document.getElementById('audioPlayer');
+                        
+                          playButton.addEventListener('click', () => {
+                            if (audioPlayer.paused) {
+                              audioPlayer.play();
+                              playButton.classList.remove('fa-circle-play');
+                              playButton.classList.add('fa-pause-circle');
+                            } else {
+                              audioPlayer.pause();
+                              playButton.classList.remove('fa-pause-circle');
+                              playButton.classList.add('fa-circle-play');
+                            }
+                          });
                         </script>
+                        
                         
                     </div>
 
