@@ -392,35 +392,34 @@
 
                     <div data-aos="fade-right" class="w-full sm:w-[48%] md:w-[30%] flex bg-blue-900 text-white border border-blue-900 rounded-xl p-2 relative shadow-md transform transition duration-300 hover:scale-105 hover:shadow-[0_4px_20px_rgba(72,118,255,0.6)] hover:brightness-110">
                         <img class="h-[30px] w-[30px] shadow-md shadow-black m-2" src="assets/33ae24b06e0922019f94b686fbecf016.1000x1000x1.jpg" alt="">
-                        <div class="track w-[300px] p-4 rounded-md shadow-md bg-white flex items-center justify-between">
-                            <div class="text-left">
-                                <h6 class="text-[14px] font-bold">Dis-moi</h6>
-                                <p class="text-[10px] text-gray-500">Oxmo Puccino, Luidji & Tuerie</p>
-                            </div>
-                        
-                            <!-- Play Button -->
-                            <i id="playButton" class="fa-solid fa-circle-play text-[24px] text-black cursor-pointer hover:text-gray-500"></i>
-                            
-                            <!-- Audio Element Hidden -->
-                            <audio id="audioPlayer" src="https://cdns-preview-3.dzcdn.net/stream/c-3cf2df472d9c2e898dcbbb9f7f86c56e-3.mp3"></audio>
+                        <div class="relative w-[300px] h-[80px]">
+                            <iframe id="youtubePlayer" src="https://www.youtube.com/embed/{YOUTUBE_VIDEO_ID}?autoplay=1&controls=0&modestbranding=1&mute=0" 
+                                style="position:absolute; width:1px; height:1px; opacity:0;"
+                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         </div>
                         
-                        <script>
-                        const playButton = document.getElementById('playButton');
-                        const audioPlayer = document.getElementById('audioPlayer');
+                        <!-- Un bouton Play -->
+                        <i id="playButton" class="fa-solid fa-circle-play text-[20px] mt-4 ml-4 hover:text-gray-500 cursor-pointer"></i>
                         
-                        playButton.addEventListener('click', () => {
-                            if (audioPlayer.paused) {
-                                audioPlayer.play();
+                        <script>
+                        let playerIframe = document.getElementById('youtubePlayer');
+                        let playButton = document.getElementById('playButton');
+                        let isPlaying = false;
+                        
+                        playButton.addEventListener('click', function () {
+                            if (!isPlaying) {
+                                playerIframe.src = "https://www.youtube.com/embed/{YOUTUBE_VIDEO_ID}?autoplay=1&controls=0&modestbranding=1&mute=0";
                                 playButton.classList.remove('fa-circle-play');
                                 playButton.classList.add('fa-pause-circle');
+                                isPlaying = true;
                             } else {
-                                audioPlayer.pause();
+                                playerIframe.src = "";
                                 playButton.classList.remove('fa-pause-circle');
                                 playButton.classList.add('fa-circle-play');
+                                isPlaying = false;
                             }
                         });
-                        </script>                                                                   
+                        </script>                                           
                         
                         
                     </div>
