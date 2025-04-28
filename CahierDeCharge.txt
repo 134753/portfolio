@@ -1,0 +1,69 @@
+# Cahier des Charges - Portfolio de NYAMSI Lévy
+
+## 1. Présentation du Projet
+**Nom du projet :** Portfolio de NYAMSI Lévy  
+**Objectif :** Développer un portfolio en ligne permettant de présenter mon parcours, mes compétences, mes projets et me rendre contactable par les recruteurs.
+
+## 2. Objectifs et Enjeux
+- Offrir une vitrine professionnelle attractive et dynamique.
+- Faciliter la consultation de mon CV en ligne.
+- Permettre aux visiteurs de me contacter facilement.
+- Présenter mes projets avec des descriptions et des liens vers leur code source.
+- Assurer une navigation fluide et une interface responsive.
+
+## 3. Fonctionnalités Principales
+### 3.1. Page d'Accueil
+- Présentation brève avec un message de bienvenue.
+- Affichage dynamique des technologies utilisées.
+- Photo et citation inspirante.
+
+### 3.2. Section "À Propos"
+- Description détaillée de mon parcours et de mes compétences.
+- Présentation de ma formation actuelle et mes objectifs professionnels.
+
+### 3.3. Section "Projets"
+- Liste des projets réalisés avec :
+  - Titre et description.
+  - Technologies utilisées.
+  - Image ou aperçu du projet.
+  - Lien vers le code source (GitHub).
+
+### 3.4. CV en Ligne
+- Bouton pour afficher le CV dans une nouvelle fenêtre.
+- Design épuré et facilement lisible.
+
+### 3.5. Formulaire de Contact
+- Champs : Nom, Email, Message.
+- Bouton d'envoi avec confirmation visuelle.
+- Icônes LinkedIn et GitHub sur le côté droit avec une marge importante.
+
+## 4. Contraintes Techniques
+- **Technologies utilisées :** HTML, CSS (Tailwind CSS), JavaScript.
+- **Frameworks et librairies :** Tailwind CSS pour le style, FontAwesome pour les icônes.
+- **Hébergement :** À définir (GitHub Pages, Vercel, Netlify...).
+- **Compatibilité :** Desktop et mobile (responsive design).
+
+## 5. Design et Ergonomie
+- Palette de couleurs : **#15BFA3 (principal)**, **blanc**, **gris foncé**.
+- Design épuré et moderne.
+- Navigation fluide avec une barre fixe.
+- Effets interactifs (animations sur les cartes de projet, ombrages dynamiques).
+
+## 6. Planification et Déploiement
+- **Étape 1 :** Conception du design et de la structure.
+- **Étape 2 :** Développement des différentes sections.
+- **Étape 3 :** Ajout des animations et interactions.
+- **Étape 4 :** Tests et correction des bugs.
+- **Étape 5 :** Hébergement et mise en ligne.
+
+## 7. Maintenance et Évolutions
+- Mise à jour régulière des projets.
+- Amélioration des performances et de l'accessibilité.
+- Ajout de nouvelles fonctionnalités si nécessaire (blog, dark mode, etc.).
+
+**Date de début :** À définir  
+**Date de mise en ligne prévue :** À définir
+
+---
+
+Ce cahier des charges servira de guide pour assurer un développement structuré et efficace du portfolio.

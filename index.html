@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Levy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="aos-master/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .holo {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: linear-gradient(60deg, rgba(255,255,255,0.1) 0%, rgba(0,255,255,0.2) 50%, rgba(255,0,255,0.1) 100%);
+            opacity: 0.6;
+            mix-blend-mode: overlay;
+            animation: holoMove 2s infinite linear;
+            display: none;
+        }
+        @keyframes holoMove {
+            0% { transform: rotate(0deg) translateX(0px); }
+            50% { transform: rotate(10deg) translateX(20px); }
+            100% { transform: rotate(0deg) translateX(0px); }
+        }
+    </style>
+</head>
+<body id="real-content" class="hidden m-0 bg-gray-900 text-white pt-[80px] pb-[70px] md:pt-[200px] md:pb-0">
+        <div id="skeleton" class="animate-pulse flex flex-col gap-4">
+            <div class="h-4 bg-gray-700 rounded w-3/4"></div>
+            <div class="h-4 bg-gray-700 rounded w-1/2"></div>
+            <div class="h-4 bg-gray-700 rounded w-full"></div>
+        </div>
+    <header class="fixed hidden md:flex top-0 left-0 w-full z-50 bg-gray-900/70 backdrop-blur-md transition-opacity duration-300 flex justify-between items-center px-10 py-5">
+        <img class="h-[130px]" src="assets/Yellow_Black_Modern_Bulb_Tech_Logo_Design-2-removebg-preview.png" alt="Logo">
+        <div class="flex flex-col items-end">
+            <a href="assets/Orange et Bleu Duotone Conseiller pédagogique CV.pdf" target="_blank" 
+            class="mb-4 bg-[#15BFA3] text-black py-2 px-6 rounded-lg font-bold hover:bg-[#13a38c] transition">
+                Mon CV
+            </a>
+            <nav>
+                <ul class="flex space-x-5">
+                    <li class="p-2 border-2 border-[#15BFA3] rounded-md text-[#15BFA3] hover:bg-[#15BFA3] hover:text-white">
+                        <a href="#projets" class="flex items-center space-x-2">
+                            <i class="fas fa-briefcase md:hidden"></i>
+                            <span class="hidden md:inline">Mon Portfolio</span>
+                        </a>
+                    </li>
+                    <li class="p-2 border-2 border-[#15BFA3] rounded-md text-[#15BFA3] hover:bg-[#15BFA3] hover:text-white">
+                        <a href="#presentation" class="flex items-center space-x-2">
+                            <i class="fas fa-user md:hidden"></i>
+                            <span class="hidden md:inline">Qui suis-je ?</span>
+                        </a>
+                    </li>
+                    <li class="p-2 border-2 border-[#15BFA3] rounded-md text-[#15BFA3] hover:bg-[#15BFA3] hover:text-white">
+                        <a href="#contact" class="flex items-center space-x-2">
+                            <i class="fas fa-envelope md:hidden"></i>
+                            <span class="hidden md:inline">Me contacter</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <header class="fixed top-0 left-0 w-full z-50 bg-gray-900/70  backdrop-blur-md transition-opacity duration-300 flex justify-between items-center px-5 py-3 md:hidden">
+        <img class="h-[60px]" src="assets/Yellow_Black_Modern_Bulb_Tech_Logo_Design-2-removebg-preview.png" alt="Logo">
+        <a href="assets/Orange et Bleu Duotone Conseiller pédagogique CV.pdf" target="_blank" 
+        class="bg-[#15BFA3] text-black py-2 px-4 rounded-lg font-bold hover:bg-[#13a38c] transition text-sm">
+            Mon CV
+        </a>
+    </header>
+
+    <nav class="fixed bottom-0 left-0 w-full z-50 bg-gray-900/70 backdrop-blur-md flex justify-around items-center py-3 md:hidden">
+        <a href="#projets" class="text-[#15BFA3] text-xl hover:text-[#13a38c]">
+            <i class="fas fa-briefcase"></i>
+        </a>
+        <a href="#presentation" class="text-[#15BFA3] text-xl hover:text-[#13a38c]">
+            <i class="fas fa-user"></i>
+        </a>
+        <a href="#contact" class="text-[#15BFA3] text-xl hover:text-[#13a38c]">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </nav>
+
+    <section class="flex flex-col md:flex-row items-center md:items-start">
+        <div id="card"
+            class="order-1 md:order-2 w-[50%] md:w-72 h-[400px] mt-6 md:mt-0 hover:rounded-xl rounded-xl overflow-hidden shadow-xl transition-transform duration-300 ease-out bg-center flex flex-col items-center p-4 md:ml-28"
+            style="background-image: url('https://via.placeholder.com/300x420')">
+            <div class="w-full h-[240px] md:w-52 md:h-52 bg-[#15BFA3] flex justify-center items-center rounded-xl">
+                <img class="w-full h-full object-cover rounded-xl" src="assets/deffc199-785e-41a6-a1eb-942bebc1dc7d-removebg-preview.png" alt="">
+            </div>
+            <div class="text-center mt-4">
+                <h3 class="text-base md:text-lg font-semibold italic">NYAMSI Lévy</h3>
+                <h6 class="italic text-[#15BFA3] text-sm md:text-base">Développeur Web</h6>
+                <p class="text-xs md:text-sm text-gray-200 mt-2">“Un bon design est invisible. Mais un mauvais, on ne voit que ça.”</p>
+            </div>
+            <div class="holo rounded-xl"></div>
+        </div>
+
+        <div class="order-2 mt-2 md:mt-0 md:order-1 w-full md:w-[60%] px-5 md:ml-[20px] md:pr-[30px]">
+            <h1 class="mt-4 text-2xl md:text-[32px] text-[#15BFA3] text-center md:text-left">Hello ! Moi c’est Lévy !</h1>
+            <p class="mt-2 text-sm md:text-base text-justify">
+                Un jeune développeur web passionné par le code et le design. Pour moi, le développement, ce n’est pas juste écrire des lignes de code : c’est créer des expériences fluides, accessibles et impactantes. J’aime concevoir des interfaces intuitives et optimiser des fonctionnalités pour qu’elles soient aussi performantes que plaisantes à utiliser.<br>
+                Actuellement en formation Développement Web & Mobile à Epitech, je cherche une alternance à partir de septembre 2025 pour continuer à apprendre et évoluer au sein d’une équipe motivante. J’aime les environnements dynamiques, le travail en équipe et surtout, résoudre des problèmes de manière créative.
+            </p>
+
+            <h3 class="mt-4 text-[#15BFA3] text-center md:text-left">Voici les techos & outils que j’utilise :</h3>
+            <div class="flex mt-2 overflow-x-auto md:overflow-hidden relative w-full md:w-[550px] h-[80px]">
+                <div id="slider" class="absolute md:relative flex h-full gap-4">
+                    <i class="fa-brands fa-figma text-[80px] mr-4"></i>
+                    <i class="fa-brands fa-square-github mr-4 text-purple-600 text-[80px]"></i>
+                    <i class="fa-brands fa-react mr-4 text-[80px] text-[#74C0FC]"></i>
+                    <img class="h-[70px] mr-4" src="assets/66d5238900aab3d7b86dc5e53a77c817.jpg" alt="">
+                    <img class="h-[80px] mr-4" src="assets/a96daef60fbaed1c3b4af85568a69b3f-removebg-preview.png" alt="">
+                    <img class="h-[80px]" src="assets/images-removebg-preview.png" alt="">
+
+                    <i class="fa-brands fa-figma text-[80px] mr-4"></i>
+                    <i class="fa-brands fa-square-github mr-4 text-purple-600 text-[80px]"></i>
+                    <i class="fa-brands fa-react mr-4 text-[80px] text-[#74C0FC]"></i>
+                    <img class="h-[70px] mr-4" src="assets/66d5238900aab3d7b86dc5e53a77c817.jpg" alt="">
+                    <img class="h-[80px] mr-4" src="assets/a96daef60fbaed1c3b4af85568a69b3f-removebg-preview.png" alt="">
+                    <img class="h-[80px]" src="assets/images-removebg-preview.png" alt="">
+                </div>
+            </div>
+
+            <h4 class="mt-2 text-[#15BFA3] text-center md:text-left">
+                Je suis bien sûr ouvert à découvrir de nouvelles technos & de nouveaux outils.
+            </h4>
+        </div>
+    </section>
+
+    <section id="projets" class="mt-20 text-center px-4">
+        <h2 class="text-[28px] text-[#15BFA3]">Mes projets</h2>
+
+        <!-- Carrousel wrapper -->
+        <div class="relative max-w-6xl mx-auto mt-10">
+
+            <!-- Flèches pour mobile -->
+            <button onclick="scrollCarousel(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-[#15BFA3] p-2 rounded-full z-10 md:hidden">
+                <i class="fas fa-chevron-left text-white"></i>
+            </button>
+            <button onclick="scrollCarousel(1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-[#15BFA3] p-2 rounded-full z-10 md:hidden">
+                <i class="fas fa-chevron-right text-white"></i>
+            </button>
+
+            <!-- Carrousel / grille -->
+            <div id="carousel" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth md:flex-wrap md:justify-center md:overflow-visible gap-6 md:gap-14 px-2">
+
+            <div onclick="openModal('modal1')" class="w-full shrink-0 snap-start md:w-[250px] md:h-[350px] bg-gray-900 shadow-xl shadow-black rounded-xl p-4 overflow-hidden relative cursor-pointer group">
+                <img class="mx-auto h-[150px] rounded-lg mb-3" src="assets/fa4f0db883d36fbfcfe76c06d9012be0-removebg-preview.png" alt="logo Madrid">
+                <h4 class="text-[#15BFA3] text-lg">Mini-blog Real Madrid</h4>
+                <p class="text-sm mt-4">Développement d'un blog sur le Réal Madrid en HTML/CSS.</p>
+                <div class="absolute inset-0 bg-[#15BFA3]/90 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center rounded-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+                </div>
+            </div>
+
+            <div onclick="openModal('modal2')" class="w-full shrink-0 snap-start md:w-[250px] md:h-[350px] bg-gray-900 shadow-xl shadow-black rounded-xl p-4 overflow-hidden relative cursor-pointer group">
+                <img class="mx-auto h-[120px] rounded-lg mt-6 mb-3" src="assets/ui-e604d.png" alt="Responsive">
+                <h4 class="text-[#15BFA3] text-lg mt-4">Maquette responsive</h4>
+                <p class="text-sm mt-4">Reproduction d’une maquette à la perfection en HTML/CSS & JS.</p>
+                <div class="absolute inset-0 bg-[#15BFA3]/90 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center rounded-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+                </div>
+            </div>
+
+            <div onclick="openModal('modal3')" class="w-full shrink-0 snap-start md:w-[250px] md:h-[350px] bg-gray-900 shadow-xl shadow-black rounded-xl p-4 overflow-hidden relative cursor-pointer group">
+                <img class="mx-auto h-[150px] rounded-lg mb-3" src="assets/White Grey Red Vintage Illustrative Love Logo.png" alt="logo plateforme de rencontre">
+                <h4 class="text-[#15BFA3] text-lg">Plateforme de rencontres</h4>
+                <p class="text-sm mt-4">Développement d'une plateforme de rencontre en PHP & MySQL.</p>
+                <div class="absolute inset-0 bg-[#15BFA3]/90 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center rounded-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+                </div>
+            </div>
+
+            <div onclick="openModal('modal4')" class="w-full shrink-0 snap-start md:w-[250px] md:h-[350px] bg-gray-900 shadow-xl shadow-black rounded-xl p-4 overflow-hidden relative cursor-pointer group">
+                <img class="mx-auto h-[150px] rounded-lg mt-3" src="assets/Black_Illustration_Ninja_Esport_Or_Gaming_Mascot_Logo_-3-removebg-preview.png" alt="logo réseau social">
+                <h4 class="text-[#15BFA3] text-lg">Réseau social type Twitter</h4>
+                <p class="text-sm mt-4">Développement d'un réseau social en PHP, Tailwind & MySQL.</p>
+                <div class="absolute inset-0 bg-[#15BFA3]/90 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center rounded-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+                </div>
+            </div>
+
+            <div onclick="openModal('modal5')" class="w-full shrink-0 snap-start md:w-[250px] md:h-[350px] bg-gray-900 shadow-xl shadow-black rounded-xl p-4 overflow-hidden relative cursor-pointer group">
+                <img class="mx-auto h-[150px] rounded-lg mb-3" src="assets/d844896c477478b2d00d2032ef82ab34-removebg-preview.png" alt="Puissance 4">
+                <h4 class="text-[#15BFA3] text-lg">Jeu Puissance 4</h4>
+                <p class="text-sm mt-4">Jeu interactif en JavaScript.</p>
+                <div class="absolute inset-0 bg-[#15BFA3]/90 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center rounded-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+                </div>
+            </div>
+
+            <div onclick="openModal('modal6')" class="w-full shrink-0 snap-start md:w-[250px] md:h-[350px] bg-gray-900 shadow-xl shadow-black rounded-xl p-4 overflow-hidden relative cursor-pointer group">
+                <img class="mx-auto h-[150px] rounded-lg mb-3" src="assets/0-1.jpg" alt="Trading">
+                <h4 class="text-[#15BFA3] text-lg">TradBot (en cours)</h4>
+                <p class="text-sm mt-4">Bot Discord en Python (marchés financiers).</p>
+                <div class="absolute inset-0 bg-[#15BFA3]/90 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center rounded-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal1" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center overflow-y-auto">
+        <div class="bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6">
+            <button onclick="closeModal('modal1')" class="absolute top-3 right-4 text-gray-400 hover:text-white text-2xl font-bold">&times;</button>
+            <div class="flex-1 mt-6 sm:mt-12">
+                <img src="assets/Capture d’écran 2025-04-22 à 18.31.20.png" alt="Real Madrid" class="rounded-lg w-full max-h-[250px] sm:max-h-[300px] object-contain mx-auto" />
+            </div>
+            <div class="flex-1 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-[#15BFA3] text-xl font-bold mb-3">📰 News Madrid <br>– Blog d'actualités sur le Real Madrid</h3>
+                    <p class="text-sm leading-relaxed">Ce projet marque mes débuts en développement web. J'ai réalisé ce blog à la main en HTML et CSS pour couvrir l'actualité du Real Madrid, un sujet qui me passionne. L'objectif était de créer une interface claire et fonctionnelle avec plusieurs sections : accueil, actualités, calendrier des matchs et présentation de l'équipe.
+                    Ce site m’a permis de mettre en pratique mes premières compétences en structuration de contenu tout en liant le code à un sujet qui me motive vraiment.</p>
+                </div>
+                <div class="mt-6">
+                    <a href="https://github.com/134753/blog_madrid" target="_blank" class="bg-[#15BFA3] text-gray-900 font-semibold py-2 px-4 rounded hover:bg-[#13a18a] transition">Voir sur GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center overflow-y-auto">
+        <div class="bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6">
+            <button onclick="closeModal('modal2')" class="absolute top-3 right-4 text-gray-400 hover:text-white text-2xl font-bold">&times;</button>
+            <div class="flex-1">
+                <img src="assets/screenshot_2.png" alt="Maquette" class="rounded-lg w-full max-h-[300px] object-contain mx-auto" />
+            </div>
+            <div class="flex-1 flex flex-col justify-between">
+            <div>
+                <h3 class="text-[#15BFA3] text-2xl font-bold mb-3">📱 Reproduction responsive d'une maquette – Projet scolaire</h3>
+                <p class="text-sm leading-relaxed">Ce projet avait pour objectif de reproduire à l’identique une maquette fournie, en respectant chaque détail visuel et structurel. Réalisé dans un cadre scolaire, l’accent était mis sur la précision du code et la fidélité au design original, comme pour une commande réelle en agence.
+                Un aspect essentiel du travail était de rendre le site entièrement responsive, c’est-à-dire parfaitement lisible et fonctionnel sur tous types d’écrans (ordinateur, tablette, smartphone). Cela m’a permis d'approfondir mes compétences en media queries, en flexbox, et en adaptation d’éléments selon les résolutions.
+                Ce projet m’a formé à une rigueur professionnelle et à la logique du pixel-perfect tout en me familiarisant avec les bonnes pratiques du développement web moderne.</p>
+            </div>
+            <div class="mt-6">
+                <a href="https://github.com/134753/maquette" target="_blank" class="bg-[#15BFA3] text-gray-900 font-semibold py-2 px-4 rounded hover:bg-[#13a18a] transition">Voir sur GitHub</a>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal3" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center overflow-y-auto">
+        <div class="bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6">
+            <button onclick="closeModal('modal3')" class="absolute top-3 right-4 text-gray-400 hover:text-white text-2xl font-bold">&times;</button>
+            <div class="flex-1 mt-6 sm:mt-24">
+                <img src="assets/Capture d’écran 2025-04-17 à 10.10.45.png" alt="PLateforme de rencontre" class="rounded-lg w-full max-h-[250px] sm:max-h-[300px] object-contain mx-auto" />
+            </div>
+            <div class="flex-1 flex flex-col justify-between">
+            <div>
+            <h3 class="text-[#15BFA3] text-2xl font-bold mb-3">❤️ Plateforme de rencontre</h3>
+            <p class="text-sm leading-relaxed">Dans le cadre d’un projet scolaire, j’ai développé une plateforme de type Meetic, avec gestion des utilisateurs, inscription, connexion sécurisée, et affichage dynamique des profils. Le back-end a été entièrement codé en PHP, en suivant le modèle MVC (Modèle-Vue-Contrôleur) pour structurer proprement l’application.
+            La base de données MySQL permettait d’enregistrer et de gérer les utilisateurs, leurs préférences, ainsi que leurs interactions. J’ai mis en place des requêtes SQL optimisées, une architecture organisée et une logique de routing claire.
+            Ce projet m’a permis de comprendre les bases d’une application web dynamique, de gérer les interactions client-serveur, et de me familiariser avec l’architecture MVC – une approche essentielle pour développer des projets web maintenables et évolutifs.</p>
+        </div>
+        <div class="mt-6">
+            <a href="https://github.com/134753/Projet_meetic" target="_blank" class="bg-[#15BFA3] text-gray-900 font-semibold py-2 px-4 rounded hover:bg-[#13a18a] transition">Voir sur GitHub</a>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="modal4" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center overflow-y-auto">
+    <div class="bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6">
+        <button onclick="closeModal('modal4')" class="absolute top-3 right-4 text-gray-400 hover:text-white text-2xl font-bold">&times;</button>
+        <div class="flex-1 mt-6 sm:mt-24">
+        <img src="assets/twitter.png" alt="Twitter Clone" class="rounded-lg w-full object-contain mx-auto" />
+        </div>
+        <div class="flex-1 flex flex-col justify-between">
+        <div>
+            <h3 class="text-[#15BFA3] text-2xl font-bold mb-3">Réseau Social – Twitter Clone</h3>
+            <p class="text-sm leading-relaxed">Ce projet avait pour objectif de concevoir une plateforme sociale inspirée de Twitter, avec des fonctionnalités clés comme la publication de messages, la création de comptes, le fil d’actualité, et les interactions entre utilisateurs.
+            Nous avons travaillé en équipe, en mettant en place un véritable flux de développement collaboratif via GitHub, avec l'utilisation des branches pour gérer les différentes parties du projet de manière fluide et organisée.
+            Le back-end a été développé en PHP, avec gestion des utilisateurs, authentification et logique métier, tandis que le front-end a été stylisé avec Tailwind CSS, pour une interface moderne et responsive. La base de données MySQL assurait le stockage des utilisateurs et des publications.
+            Ce projet m’a permis de renforcer mes compétences en développement full stack, mais aussi de découvrir les bonnes pratiques du travail en groupe : gestion de version, répartition des tâches, résolution de conflits Git, et communication efficace.</p>
+        </div>
+        <div class="mt-6">
+            <a href="https://github.com/134753/Projet_Twitter" target="_blank" class="bg-[#15BFA3] text-gray-900 font-semibold py-2 px-4 rounded hover:bg-[#13a18a] transition">Voir sur GitHub</a>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="modal5" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center overflow-y-auto">
+    <div class="bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6">
+        <button onclick="closeModal('modal5')" class="absolute top-3 right-4 text-gray-400 hover:text-white text-2xl font-bold">&times;</button>
+        <div class="flex-1 mt-6 sm:mt-20">
+        <img src="assets/puissan4.jpeg.png" alt="Puissance 4" class="rounded-lg w-full max-h-[250px] sm:max-h-[300px] object-contain mx-auto" />
+        </div>
+        <div class="flex-1 flex flex-col justify-between">
+        <div>
+            <h3 class="text-[#15BFA3] text-2xl font-bold mb-3">🎮 Jeu Puissance 4</h3>
+            <p class="text-sm leading-relaxed">Dans ce projet, j’ai développé une version interactive du célèbre jeu Puissance 4, en JavaScript vanilla (pur, sans framework). L’objectif principal était de manipuler le DOM dynamiquement, gérer les événements utilisateurs et implémenter la logique de jeu complète : alternance des tours, placement des jetons, détection des victoires horizontales, verticales et diagonales.
+            Ce projet m’a permis de consolider mes bases en JavaScript tout en m’exerçant à la gestion d’états, de boucles imbriquées, et de conditions complexes. Il m’a aussi appris à structurer un projet de jeu de manière claire, avec une interface simple et fonctionnelle.
+            Un excellent exercice de logique et d’interactivité, parfait pour explorer les fondamentaux de la programmation web.</p>
+        </div>
+        <div class="mt-6">
+            <a href="https://github.com/134753/puissance4" target="_blank" class="bg-[#15BFA3] text-gray-900 font-semibold py-2 px-4 rounded hover:bg-[#13a18a] transition">Voir sur GitHub</a>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="modal6" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center overflow-y-auto">
+    <div class="bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6">
+        <button onclick="closeModal('modal6')" class="absolute top-3 right-4 text-gray-400 hover:text-white text-2xl font-bold">&times;</button>
+        <div class="flex-1 mt-6 sm:mt-28">
+        <img src="assets/trading-en-ligne-1500x1001.jpg" alt="TradBot" class="rounded-lg w-full max-h-[250px] sm:max-h-[300px] object-contain mx-auto" />
+        </div>
+        <div class="flex-1 flex flex-col justify-between">
+        <div>
+            <h3 class="text-[#15BFA3] text-2xl font-bold mb-3">📈 TradBot – Bot de suivi et d’analyse financière (en cours)</h3>
+            <p class="text-sm leading-relaxed">TradBot est un projet personnel en cours de développement, visant à créer un assistant intelligent capable de récupérer, analyser et traiter des données financières en temps réel. Grâce à des APIs comme Yahoo Finance ou Forex, le bot collecte des informations sur les marchés (cours des devises, actions, indicateurs, etc.) et les analyse selon des logiques personnalisées.
+            Le but à terme est de permettre à ce bot d’émettre des alertes, de générer des rapports, voire d’aider à prendre des décisions simples via des critères prédéfinis.
+            Ce projet me permet de me plonger dans le traitement de données, la programmation orientée objet, l’usage des APIs REST, et les bases de l’analyse financière. C’est un défi technique motivant, que je développe petit à petit en parallèle de mes autres activités..</p>
+        </div>
+        <div class="mt-6">
+            <a href="#projets"  class="bg-gray-600 text-gray-900 font-semibold py-2 px-4 rounded hover:bg-gray-400 transition">Code pas encore disponible</a>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    
+    <section id="presentation" class="md:flex mb-32 mt-24">
+        <div data-aos="flip-left" class="mt-14 ml-6 md:ml-12 ">
+            <img class="mt-4 ml-8 h-[400px]" src="assets/IMG_5624.jpg" alt="">
+        </div>   
+        <div class=" w-[60%] ml-16">
+            <div class="">
+                <h2 class="mt-8 text-[34px] text-[#15BFA3]">Et si je vous parlais un peu de moi !</h2>
+                <p class="mt-4">En dehors du développement web je suis aussi passionné par la musique, le football, le gaming et la lecture.  Autant de domaines qui nourrissent ma créativité, mon esprit d’équipe, mon sens du détail et ma capacité de réflexion.</p>
+            </div>
+            
+            <div class=" mt-2 text-center">
+                <h3 class="mb-4 text-[24px] text-[#15BFA3] font-bold"><i class="fa-solid fa-headphones"></i> Mon petit univers musical</h3>
+
+                <div class="flex flex-wrap justify-center gap-6 pt-4">
+                    <div class="w-full sm:w-[48%] md:w-[30%] flex bg-white text-black border border-white rounded-xl p-2 relative shadow-md transform transition duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(192,192,192,0.5)] hover:brightness-110">
+                        <img class="h-[30px] w-[30px] shadow-md shadow-black m-2" src="assets/bbJacques.jpeg" alt="">
+                        <div class="mt-2 text-start w-[55%]">
+                            <h6 class="text-[12px] font-semibold">Extramilles</h6>
+                            <p class="text-[8px]">BB Jacques & Jolagreen23</p>
+                        </div>
+                        <a href="#"><i class="fa-solid fa-circle-play text-[20px] mt-4 ml-4 text-black hover:text-gray-500"></i></a>
+                    </div>
+
+                    <div class="w-full sm:w-[48%] md:w-[30%] flex bg-blue-900 text-white border border-blue-900 rounded-xl p-2 relative shadow-md transform transition duration-300 hover:scale-105 hover:shadow-[0_4px_20px_rgba(72,118,255,0.6)] hover:brightness-110">
+                        <img class="h-[30px] w-[30px] shadow-md shadow-black m-2" src="assets/uknow.jpeg" alt="">
+                        <div class="mt-2 text-start w-[55%]">
+                            <h6 class="text-[12px] font-semibold">Rodeo drive</h6>
+                            <p class="text-[8px]">Leto & Hamza</p>
+                        </div>
+                        <a href="#"><i class="fa-solid fa-circle-play text-[20px] mt-4 ml-4 text-white hover:text-gray-500"></i></a>
+                    </div>
+
+                    <div class="w-full sm:w-[48%] md:w-[30%] flex bg-[#865D3F] text-white border border-[#865D3F] rounded-xl p-2 relative shadow-md transform transition duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(205,127,50,0.4)] hover:brightness-110">
+                        <img class="h-[30px] w-[30px] shadow-md shadow-black m-2" src="assets/Unknown.jpeg" alt="">
+                        <div class="mt-2 text-start w-[55%]">
+                            <h6 class="text-[12px] font-semibold">Chaque jour</h6>
+                            <p class="text-[8px]">Tarik Azzouz & Zequin</p>
+                        </div>
+                        <a href="#"><i class="fa-solid fa-circle-play text-[20px] mt-4 ml-4 hover:text-gray-500"></i></a>
+                    </div>
+
+                    <div class="w-full sm:w-[48%] md:w-[30%] flex bg-pink-500 text-white border border-pink-500 rounded-xl p-2 relative shadow-md transform transition duration-300 hover:scale-105 hover:shadow-[0_4px_20px_rgba(255,105,180,0.6)] hover:brightness-110">
+                        <img class="h-[30px] w-[30px] shadow-md shadow-black m-2" src="assets/J9ueve.png" alt="">
+                        <div class="mt-2 text-start w-[55%]">
+                            <h6 class="text-[12px] font-semibold">I &lt;3 U</h6>
+                            <p class="text-[8px]">J9ueve & Genezio</p>
+                        </div>
+                        <a href="#"><i class="fa-solid fa-circle-play text-[20px] mt-4 ml-4 hover:text-gray-500"></i></a>
+                    </div>
+
+                    <div class="w-full sm:w-[48%] md:w-[30%] flex bg-blue-900 text-white border border-blue-900 rounded-xl p-2 relative shadow-md transform transition duration-300 hover:scale-105 hover:shadow-[0_4px_20px_rgba(72,118,255,0.6)] hover:brightness-110">
+                        <img class="h-[30px] w-[30px] shadow-md shadow-black m-2" src="assets/33ae24b06e0922019f94b686fbecf016.1000x1000x1.jpg" alt="">
+                        <div class="mt-2 text-start w-[55%]">
+                            <h6 class="text-[12px] font-semibold">Dis-moi</h6>
+                            <p class="text-[8px]">Oxmo Puccino, Luidji & Tueurie</p>
+                        </div>
+                        <a href="#"><i class="fa-solid fa-circle-play text-[20px] mt-4 ml-4 hover:text-gray-500"></i></a>
+                    </div>
+
+                    <div class="w-full sm:w-[48%] md:w-[30%] flex bg-[#865D3F] text-white border border-[#865D3F] rounded-xl p-2 relative shadow-md transform transition duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(205,127,50,0.4)] hover:brightness-110">
+                        <img class="h-[30px] w-[30px] shadow-md shadow-black m-2" src="assets/BDLM-Volume-1.jpg" alt="">
+                        <div class="mt-2 text-start w-[55%]">
+                            <h6 class="text-[12px] font-semibold">Fast life &amp; famille</h6>
+                            <p class="text-[8px]">Tiakola, HK la paille & Jolagreen23</p>
+                        </div>
+                        <a href="#"><i class="fa-solid fa-circle-play text-[20px] mt-4 ml-4 hover:text-gray-500"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>                
+
+    </section>
+
+    <section id="contact" class="mt-20 text-center">
+        <h2 class="text-[28px] text-[#15BFA3] mb-2">Me Contacter</h2>
+
+        <div class="flex flex-col justify-center items-center md:flex-row md:items-start gap-8 mt-6 md:ml-8">
+            
+            <div class="bg-gray-900 border border-gray-900 w-[90%] md:w-[400px] shadow-xl shadow-black rounded-xl p-4">
+            <form action="https://formspree.io/f/{levy.nyamsi@epitech.eu}" method="POST">
+                <div class="mb-2">
+                <label for="name" class="block text-[#15BFA3] text-left mb-1">Nom</label>
+                <input type="text" id="name" name="name" required
+                    class="w-full p-2 rounded-lg bg-gray-800 border border-gray-700 text-white">
+                </div>
+                <div class="mb-2">
+                <label for="email" class="block text-[#15BFA3] text-left mb-1">Email</label>
+                <input type="email" id="email" name="email" required
+                    class="w-full p-2 rounded-lg bg-gray-800 border border-gray-700 text-white">
+                </div>
+                <div class="mb-2">
+                <label for="message" class="block text-[#15BFA3] text-left mb-1">Message</label>
+                <textarea id="message" name="message" rows="4" required
+                    class="w-full p-2 rounded-lg bg-gray-800 border border-gray-700 text-white"></textarea>
+                </div>
+                <button type="submit"
+                class="w-full bg-[#15BFA3] text-black py-2 rounded-lg font-bold hover:bg-[#13a38c] transition">
+                Envoyer
+                </button>
+            </form>
+            </div>
+
+            <div class="flex flex-row md:flex-col md:mt-28 justify-center items-center gap-6">
+                <a href="https://www.linkedin.com/in/levy-nyamsi/" target="_blank">
+                    <i class="fa-brands fa-linkedin text-[35px] text-[#15BFA3] hover:text-[#1CEFB0]"></i>
+                </a>
+                <a href="https://github.com/134753" target="_blank">
+                    <i class="fa-brands fa-github text-[35px] text-[#15BFA3] hover:text-[#1CEFB0]"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <footer class="text-center border border-black mt-12 p-8">
+        <p>©By NYAMSI Lévy</p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="aos-master/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    
+</body>
+</html>
+
