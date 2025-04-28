@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Levy</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="aos-master/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .holo {
@@ -25,6 +25,18 @@
             50% { transform: rotate(10deg) translateX(20px); }
             100% { transform: rotate(0deg) translateX(0px); }
         }
+    </style>
+    <style>
+        .animate-pulse {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
     </style>
 </head>
 <body id="real-content" class="hidden m-0 bg-gray-900 text-white pt-[80px] pb-[70px] md:pt-[200px] md:pb-0">
@@ -346,7 +358,7 @@
                             <h6 class="text-[12px] font-semibold">Extramilles</h6>
                             <p class="text-[8px]">BB Jacques & Jolagreen23</p>
                         </div>
-                        <a href="#"><i class="fa-solid fa-circle-play text-[20px] mt-4 ml-4 text-black hover:text-gray-500"></i></a>
+                        <i class="fa-solid fa-circle-play text-[20px] mt-4 ml-4 text-black hover:text-gray-500" data-track="Extramilles BB Jacques Jolagreen23"></i>
                     </div>
 
                     <div class="w-full sm:w-[48%] md:w-[30%] flex bg-blue-900 text-white border border-blue-900 rounded-xl p-2 relative shadow-md transform transition duration-300 hover:scale-105 hover:shadow-[0_4px_20px_rgba(72,118,255,0.6)] hover:brightness-110">
@@ -355,7 +367,7 @@
                             <h6 class="text-[12px] font-semibold">Rodeo drive</h6>
                             <p class="text-[8px]">Leto & Hamza</p>
                         </div>
-                        <a href="#"><i class="fa-solid fa-circle-play text-[20px] mt-4 ml-4 text-white hover:text-gray-500"></i></a>
+                        <i class="fa-solid fa-circle-play text-[20px] mt-4 ml-4 text-white hover:text-gray-500" data-track="Rodeo drive Leto Hamza"></i>
                     </div>
 
                     <div class="w-full sm:w-[48%] md:w-[30%] flex bg-[#865D3F] text-white border border-[#865D3F] rounded-xl p-2 relative shadow-md transform transition duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(205,127,50,0.4)] hover:brightness-110">
@@ -364,7 +376,7 @@
                             <h6 class="text-[12px] font-semibold">Chaque jour</h6>
                             <p class="text-[8px]">Tarik Azzouz & Zequin</p>
                         </div>
-                        <a href="#"><i class="fa-solid fa-circle-play text-[20px] mt-4 ml-4 hover:text-gray-500"></i></a>
+                        <i class="fa-solid fa-circle-play text-[20px] mt-4 ml-4 hover:text-gray-500" data-track="Chaque jour Tarik Azzouz Zequin"></i>
                     </div>
 
                     <div class="w-full sm:w-[48%] md:w-[30%] flex bg-pink-500 text-white border border-pink-500 rounded-xl p-2 relative shadow-md transform transition duration-300 hover:scale-105 hover:shadow-[0_4px_20px_rgba(255,105,180,0.6)] hover:brightness-110">
@@ -373,7 +385,7 @@
                             <h6 class="text-[12px] font-semibold">I &lt;3 U</h6>
                             <p class="text-[8px]">J9ueve & Genezio</p>
                         </div>
-                        <a href="#"><i class="fa-solid fa-circle-play text-[20px] mt-4 ml-4 hover:text-gray-500"></i></a>
+                        <i class="fa-solid fa-circle-play text-[20px] mt-4 ml-4 hover:text-gray-500" data-track="I <3 U J9ueve Genezio"></i>
                     </div>
 
                     <div class="w-full sm:w-[48%] md:w-[30%] flex bg-blue-900 text-white border border-blue-900 rounded-xl p-2 relative shadow-md transform transition duration-300 hover:scale-105 hover:shadow-[0_4px_20px_rgba(72,118,255,0.6)] hover:brightness-110">
@@ -382,7 +394,7 @@
                             <h6 class="text-[12px] font-semibold">Dis-moi</h6>
                             <p class="text-[8px]">Oxmo Puccino, Luidji & Tueurie</p>
                         </div>
-                        <a href="#"><i class="fa-solid fa-circle-play text-[20px] mt-4 ml-4 hover:text-gray-500"></i></a>
+                        <i class="fa-solid fa-circle-play text-[20px] mt-4 ml-4 hover:text-gray-500" data-track="Dis-moi Oxmo Puccino Luidji Tueurie"></i>
                     </div>
 
                     <div class="w-full sm:w-[48%] md:w-[30%] flex bg-[#865D3F] text-white border border-[#865D3F] rounded-xl p-2 relative shadow-md transform transition duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(205,127,50,0.4)] hover:brightness-110">
@@ -391,7 +403,7 @@
                             <h6 class="text-[12px] font-semibold">Fast life &amp; famille</h6>
                             <p class="text-[8px]">Tiakola, HK la paille & Jolagreen23</p>
                         </div>
-                        <a href="#"><i class="fa-solid fa-circle-play text-[20px] mt-4 ml-4 hover:text-gray-500"></i></a>
+                        <i class="fa-solid fa-circle-play text-[20px] mt-4 ml-4 hover:text-gray-500" data-track="Fast life famille Tiakola HK la paille Jolagreen23"></i>
                     </div>
                 </div>
             </div>
@@ -446,7 +458,7 @@
     </footer>
 
     <script src="main.js"></script>
-    <script src="aos-master/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
