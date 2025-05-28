@@ -171,15 +171,6 @@
                 </div>
             </div>
 
-            <div onclick="openModal('modal2')" class="w-full shrink-0 snap-start md:w-[250px] md:h-[350px] bg-gray-900 shadow-xl shadow-black rounded-xl p-4 overflow-hidden relative cursor-pointer group">
-                <img class="mx-auto h-[120px] rounded-lg mt-6 mb-3" src="assets/ui-e604d.png" alt="Responsive">
-                <h4 class="text-[#15BFA3] text-lg mt-4">Maquette responsive</h4>
-                <p class="text-sm mt-4">Reproduction d’une maquette à la perfection en HTML/CSS & JS.</p>
-                <div class="absolute inset-0 bg-[#15BFA3]/90 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center rounded-xl">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
-                </div>
-            </div>
-
             <div onclick="openModal('modal3')" class="w-full shrink-0 snap-start md:w-[250px] md:h-[350px] bg-gray-900 shadow-xl shadow-black rounded-xl p-4 overflow-hidden relative cursor-pointer group">
                 <img class="mx-auto h-[150px] rounded-lg mb-3" src="assets/White Grey Red Vintage Illustrative Love Logo.png" alt="logo plateforme de rencontre">
                 <h4 class="text-[#15BFA3] text-lg">Plateforme de rencontres</h4>
@@ -206,8 +197,16 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
                 </div>
             </div>
-
             <div onclick="openModal('modal6')" class="w-full shrink-0 snap-start md:w-[250px] md:h-[350px] bg-gray-900 shadow-xl shadow-black rounded-xl p-4 overflow-hidden relative cursor-pointer group">
+                <img class="mx-auto h-[150px] rounded-lg mt-2 mb-3" src="assets/logo.png" alt="SnapchainX">
+                <h4 class="text-[#15BFA3] text-lg">NovaChain – App Mobile</h4>
+                <p class="text-sm mt-4">App React Native inspirée de Snapchat avec prise de photo, envoi, API et Expo Go.</p>
+                <div class="absolute inset-0 bg-[#15BFA3]/90 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center rounded-xl">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+                </div>
+            </div>
+              
+            <div onclick="openModal('modal7')" class="w-full shrink-0 snap-start md:w-[250px] md:h-[350px] bg-gray-900 shadow-xl shadow-black rounded-xl p-4 overflow-hidden relative cursor-pointer group">
                 <img class="mx-auto h-[150px] rounded-lg mb-3" src="assets/0-1.jpg" alt="Trading">
                 <h4 class="text-[#15BFA3] text-lg">TradBot (en cours)</h4>
                 <p class="text-sm mt-4">Bot Discord en Python (marchés financiers).</p>
@@ -316,7 +315,38 @@
 
     <div id="modal6" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center overflow-y-auto">
         <div class="bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6">
-            <button onclick="closeModal('modal6')" class="absolute top-3 right-4 text-gray-400 hover:text-white text-2xl font-bold">&times;</button>
+          <button onclick="closeModal('modal6')" class="absolute top-3 right-4 text-gray-400 hover:text-white text-2xl font-bold">&times;</button>
+          
+          <div class="flex-1 mt-4">
+            <img src="assets/IMG_5916.PNG" alt="SnapchainX preview" class="rounded-lg w-full max-h-[350px] object-contain mx-auto" />
+          </div>
+      
+          <div class="flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="text-[#15BFA3] text-2xl font-bold mb-3">📱 SnapchainX – App mobile inspirée de Snapchat</h3>
+              <p class="text-sm leading-relaxed">
+                SnapchainX est une application mobile développée avec React Native (Expo) qui permet :
+                <ul class="list-disc list-inside mt-2 text-sm">
+                  <li>de prendre des photos avec la caméra native</li>
+                  <li>de basculer entre caméra avant/arrière</li>
+                  <li>d’enregistrer et envoyer les snaps à ses amis via API</li>
+                  <li>de visualiser ses amis et gérer ses snaps</li>
+                </ul>
+                L’API est entièrement gérée via des appels sécurisés avec authentification par token. L'application est testable sur Expo Go.
+              </p>
+            </div>
+      
+            <div class="mt-6 flex flex-col gap-3">
+              <a href="https://github.com/134753/snapchainx" target="_blank" class="bg-[#15BFA3] text-gray-900 font-semibold py-2 px-4 rounded hover:bg-[#13a18a] transition">Voir le code sur GitHub</a>
+            </div>
+          </div>
+        </div>
+    </div>
+      
+    
+    <div id="modal7" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center overflow-y-auto">
+        <div class="bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6">
+            <button onclick="closeModal('modal7')" class="absolute top-3 right-4 text-gray-400 hover:text-white text-2xl font-bold">&times;</button>
             <div class="flex-1 mt-4">
                 <img src="assets/trading-en-ligne-1500x1001.jpg" alt="TradBot" class="rounded-lg w-full max-h-[250px] sm:max-h-[300px] object-contain mx-auto" />
             </div>
