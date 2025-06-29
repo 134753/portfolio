@@ -171,4 +171,58 @@ nav li {
   }
 nav li:hover{
     opacity: 1;
+}
+
+.btn-flip {
+	perspective: 1000px;
+	background: transparent;
+	color: #00f5a0;
+	border: 2px solid #00f5a0;
+	transition: transform 0.3s ease;
+}
+
+.btn-flip:hover {
+	transform: rotateX(15deg);
+	box-shadow: 0 10px 20px rgba(0, 245, 160, 0.3);
+}
+
+.btn-flip:active {
+	transform: rotateX(60deg);
+}
+
+.button-creative {
+	position: relative;
+	display: inline-block;
+	background: #111;
+	color: white;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+	transition: color 0.3s;
+	border-radius: 8px;
+	z-index: 1;
+  }
+  
+  .button-creative::before {
+	content: '';
+	position: absolute;
+	left: var(--x, 50%);
+	top: var(--y, 50%);
+	width: 200px;
+	height: 200px;
+	background: radial-gradient(circle, #00ffc3 10%, transparent 70%);
+	transform: translate(-50%, -50%) scale(0);
+	transition: transform 0.4s ease;
+	border-radius: 50%;
+	opacity: 0.5;
+	pointer-events: none;
+	z-index: 0;
+  }
+  
+  .button-creative:hover::before {
+	transform: translate(-50%, -50%) scale(1.2);
+  }
+  
+  .button-creative:hover {
+	color: #00ffc3;
   }
