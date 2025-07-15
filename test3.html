@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .holo {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: linear-gradient(60deg, rgba(255,255,255,0.1) 0%, rgba(0,255,255,0.2) 50%, rgba(255,0,255,0.1) 100%);
+            opacity: 0.6;
+            mix-blend-mode: overlay;
+            animation: holoMove 2s infinite linear;
+            display: none;
+        }
+        @keyframes holoMove {
+            0% { transform: rotate(0deg) translateX(0px); }
+            50% { transform: rotate(10deg) translateX(20px); }
+            100% { transform: rotate(0deg) translateX(0px); }
+        }
+
+        h1 > span {
+            position: relative;
+            display: inline-block;
+            color: aquamarine;
+            height: 1.25rem;
+            vertical-align: bottom;
+            overflow: hidden;
+        }
+        h1 > span > span {
+           display: block;
+           animation: animateWords 5s infinite ease; 
+        }
+        @keyframes animateWords {
+            0% { transform: translateY(0); }
+            25% { transform: translateY(-100%); }
+            50% { transform: translateY(-200%); }
+            75% { transform: translateY(-300%); }
+            100% { transform: translateY(-400%); }
+        }
+    </style>
+</head>
+<body>
+    
+
+    <h1>Hello ! 
+        <span>
+            <span>Je m'appelle NYAMSI Levy</span>
+            <span>Je suis développeur web</span>
+            <span>Je suis à la recherche d'une alternance</span>
+        </span>
+    </h1>
+        <div id="card"
+            class="order-1 md:order-2 w-[50%] md:w-72 h-[400px] mt-6 md:mt-0 hover:rounded-xl rounded-xl overflow-hidden shadow-xl transition-transform duration-300 ease-out bg-center flex flex-col items-center p-4 md:ml-28"
+            style="background-image: url('https://via.placeholder.com/300x420')">
+            <div class="w-full h-[240px] md:w-52 md:h-52 bg-[#15BFA3] flex justify-center items-center rounded-xl">
+                <img class="w-full h-full object-cover rounded-xl" src="assets/deffc199-785e-41a6-a1eb-942bebc1dc7d-removebg-preview.png" alt="">
+            </div>
+            <div class="text-center mt-4">
+                <h3 class="text-base md:text-lg font-semibold italic">NYAMSI Lévy</h3>
+                <h6 class="italic text-[#15BFA3] text-sm md:text-base">Développeur Web</h6>
+                <p class="text-xs md:text-sm text-gray-200 mt-2">“Un bon design est invisible. Mais un mauvais, on ne voit que ça.”</p>
+            </div>
+            <div class="holo rounded-xl"></div>
+        </div>
+
+</body>
+
+<script src="main.js"></script>
+</html>

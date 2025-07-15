@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – Scroll Horizontal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background-color: #0f0f0f;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: #15bfa3;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    article#projects {
+      width: 100vw;
+    }
+
+    #projects header,
+    #projects footer {
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    #projects header h2 {
+      font-size: 3rem;
+      font-weight: bold;
+      letter-spacing: -1px;
+    }
+
+    .project-scroll-container {
+      height: 500vh;
+      position: relative;
+    }
+
+    .project-scroll-container > div {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .project-group {
+      display: flex;
+      height: 100%;
+    }
+
+    .project-slide {
+      width: 100vw;
+      height: 100vh;
+      flex: 0 0 auto;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      background-color: #111;
+      text-align: center;
+    }
+
+    .project-slide h3 {
+      color: #15bfa3;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .project-slide p {
+      font-size: 0.95rem;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    .project-slide img,
+    .project-slide video {
+      width: 300px;
+      max-height: 300px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #222;
+    }
+
+    .buttons {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .button-creative {
+      background-color: #15bfa3;
+      color: black;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .button-creative:hover {
+      background-color: #0e8f7a;
+      color: white;
+    }
+
+    .progress {
+      position: fixed;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: #15bfa3;
+      bottom: 50px;
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+  </style>
+</head>
+<body>
+
+  <article id="projects">
+    <header>
+      <h2>Mes Projets</h2>
+    </header>
+
+    <section class="project-scroll-container">
+      <div>
+        <ul class="project-group">
+          <!-- Projet 1 -->
+          <li class="project-slide">
+            <img src="assets/Capture d’écran 2025-04-22 à 18.31.20.png" alt="News Madrid" />
+            <h3>📰 News Madrid – Blog d'actualités sur le Real Madrid</h3>
+            <p>Ce projet marque mes débuts en développement web. J'ai réalisé ce blog à la main en HTML et CSS pour couvrir l'actualité du Real Madrid. L’objectif était de créer une interface claire et fonctionnelle avec plusieurs sections. Ce site m’a permis de lier mes compétences techniques à ma passion.</p>
+            <div class="buttons">
+              <a href="https://madrid-nine.vercel.app/index.html" target="_blank" class="button-creative">Voir le site</a>
+              <a href="https://github.com/134753/blog_madrid" target="_blank" class="button-creative">Voir le code</a>
+            </div>
+          </li>
+
+          <!-- Projet 2 -->
+          <li class="project-slide">
+            <img src="assets/screenshot_2.png" alt="Maquette Reproduction" />
+            <h3>📱 Reproduction responsive d'une maquette – Projet scolaire</h3>
+            <p>Projet visant à reproduire une maquette fournie à l’identique. L'accent était mis sur le respect du design original (pixel-perfect) et la rigueur de code, simulant un contexte professionnel réel.</p>
+            <div class="buttons">
+              <a href="https://github.com/134753/maquette" target="_blank" class="button-creative">Voir le code</a>
+            </div>
+          </li>
+
+          <!-- Projet 3 -->
+          <li class="project-slide">
+            <img src="assets/Capture d’écran 2025-04-17 à 10.10.45.png" alt="Plateforme rencontre" />
+            <h3>❤️ Plateforme de rencontre – Projet MVC en PHP</h3>
+            <p>Développement d’une plateforme type Meetic avec gestion utilisateurs, inscription, connexion et affichage dynamique des profils. Projet basé sur l’architecture MVC en PHP pour une structuration claire.</p>
+            <div class="buttons">
+              <a href="https://github.com/134753/Projet_meetic" target="_blank" class="button-creative">Voir le code</a>
+            </div>
+          </li>
+
+          <!-- Projet 4 -->
+          <li class="project-slide">
+            <video src="assets/ede7dcdb8246454db589d7e68bab48e2.MOV" autoplay muted loop controls></video>
+            <h3>🐦 Réseau Social – Twitter Clone</h3>
+            <p>Projet de groupe visant à créer une plateforme sociale inspirée de Twitter : messages, fil d’actualité, interactions. Une belle initiation au travail collaboratif, à Git et au développement full stack.</p>
+            <div class="buttons">
+              <a href="https://github.com/134753/Projet_Twitter" target="_blank" class="button-creative">Voir le code</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <p>Retrouvez tous mes projets sur <a href="https://github.com/134753" target="_blank">GitHub</a></p>
+    </footer>
+  </article>
+
+  <div class="progress"></div>
+
+  <script type="module">
+    import { animate, scroll } from "https://cdn.jsdelivr.net/npm/motion@12.23.0/+esm"
+
+    const items = document.querySelectorAll(".project-slide")
+
+    // Scroll horizontal
+    scroll(
+      animate(".project-group", {
+        transform: ["none", `translateX(-${items.length - 1}00vw)`],
+      }),
+      {
+        target: document.querySelector(".project-scroll-container"),
+      }
+    )
+
+    // Progress bar
+    scroll(animate(".progress", { scaleX: [0, 1] }), {
+      target: document.querySelector(".project-scroll-container"),
+    })
+  </script>
+
+</body>
+</html>

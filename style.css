@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&family=Michroma&display=swap');
 
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Michroma', sans-serif;
+	
+}
+
+header li, header a {
+	font-family: 'Michroma', sans-serif;
+}
+
+p{
+	font-family: 'Electrolize', sans-serif;
+}
 .couleur 
 {
 	position: absolute;
@@ -226,3 +240,347 @@ nav li:hover{
   .button-creative:hover {
 	color: #00ffc3;
   }
+
+  .li-btn {
+	position: relative;
+	padding: 12px 24px;
+	border: 2px solid #15BFA3;
+	border-radius: 10px;
+	color: #15BFA3;
+	font-weight: bold;
+	cursor: pointer;
+	overflow: hidden;
+	transition: transform 0.3s ease;
+	display: inline-block;
+	z-index: 0;
+  }
+  
+  .li-btn::before {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	top: 50%;
+	left: 50%;
+	width: 300%;
+	height: 300%;
+	background: linear-gradient(135deg, #00f5a0, #00d9f5);
+	transition: all 0.5s ease;
+	border-radius: 50%;
+	transform: translate(-50%, -50%) scale(0);
+  }
+  
+  .li-btn:hover::before {
+	transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .li-btn:hover {
+	color: #0f172a;
+	transform: scale(1.05);
+  }
+
+  .flip-card {
+	background-color: transparent;
+	width: 300px;
+	height: 400px;
+	perspective: 1000px;
+  }
+
+  .flip-card-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+  }
+
+  .flip-card:hover .flip-card-inner {
+	transform: rotateY(180deg);
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	border-radius: 16px;
+	overflow: hidden;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .flip-card-front {
+	background-color: #15BFA3;
+	color: white;
+  }
+
+  .flip-card-front img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+  }
+
+  .flip-card-back {
+	background-color: #111827;
+	color: white;
+	transform: rotateY(180deg);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	text-align: center;
+  }
+
+  .flip-card-back h2 {
+	margin-bottom: 8px;
+	font-size: 1.4rem;
+	color: #15BFA3;
+  }
+
+  .flip-card-back em {
+	color: #15BFA3;
+	font-style: italic;
+	margin-bottom: 12px;
+  }
+
+  .flip-card-front,
+.flip-card-back {
+position: absolute;
+width: 100%;
+height: 100%;
+backface-visibility: hidden;
+border-radius: 16px;
+overflow: hidden;
+box-shadow: 0 50px 80px rgba(0, 0, 0, 0.4), 
+			0 0 30px rgba(21, 191, 163, 0.15);
+}
+
+.bubble {
+  position: relative;
+  display: inline-block;
+  padding: 20px;
+  background-color: #0f8b76;
+  box-shadow: #0f8b76;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.bubble:before {
+  content: "";
+  position: absolute;
+  padding: 7px 15px;
+  bottom: -14px;
+  right: -2px;
+  box-shadow: #0f8b76;
+  background-color: #0f8b76;
+  border-bottom-left-radius: 30px 20px;
+}
+
+.bubble:after {
+  content: "";
+  position: absolute;
+  padding: 7px 15px;
+  bottom: -14px;
+  right: -12px;
+  box-shadow: #0f8b76;
+  background-color: #0f8b76;
+  border-bottom-left-radius: 30px 20px;
+}
+
+/* Typewriter effect 1 */
+@keyframes typing {
+	/* Phrase 1 : m'appelle NYAMSI Lévy */
+	 0%,   2%   { content: ""; }
+	 3%,   4%   { content: "m'"; }
+	 5%,   6%   { content: "m'a"; }
+	 7%,   8%   { content: "m'app"; }
+	 9%,  10%   { content: "m'appel"; }
+	11%,  12%   { content: "m'appelle"; }
+	13%,  14%   { content: "m'appelle NY"; }
+	15%,  16%   { content: "m'appelle NYAM"; }
+	17%,  18%   { content: "m'appelle NYAMSI"; }
+	19%,  20%   { content: "m'appelle NYAMSI L"; }
+	21%,  22%   { content: "m'appelle NYAMSI Lé"; }
+	23%,  24%   { content: "m'appelle NYAMSI Lévy"; }
+	25%,  26%   { content: "m'appelle NYAMSI Lévy"; }
+  
+	/* Phrase 2 : suis développeur full-stack */
+	27%,  28%   { content: "s"; }
+	29%,  30%   { content: "suis"; }
+	31%,  32%   { content: "suis d"; }
+	33%,  34%   { content: "suis dév"; }
+	35%,  36%   { content: "suis déve"; }
+	37%,  38%   { content: "suis dével"; }
+	39%,  40%   { content: "suis dévelo"; }
+	41%,  42%   { content: "suis développ"; }
+	43%,  44%   { content: "suis développe"; }
+	45%,  46%   { content: "suis développeur"; }
+	47%,  48%   { content: "suis développeur f"; }
+	49%,  50%   { content: "suis développeur full"; }
+	51%,  52%   { content: "suis développeur full-sta"; }
+	53%,  54%   { content: "suis développeur full-stack"; }
+  
+	/* Pause */
+	55%,  56%   { content: "suis développeur full-stack"; }
+  
+	/* Phrase 3 : suis à la recherche d'une alternance */
+	57%,  58%   { content: "r "; }
+	59%,  60%   { content: "re"; }
+	61%, 62%   { content: "rec"; }
+	63%, 64%   { content: "rech"; }
+	65%, 66%   { content: "recher"; }
+	67%, 68%   { content: "recherc"; }
+	69%, 70%   { content: "recherche "; }
+	71%, 72%   { content: "recherche un"; }
+	73%, 74%   { content: "recherche une "; }
+	75%, 76%   { content: "recherche une al"; }
+	77%, 78%   { content: "recherche une alter"; }
+   79%, 80% { content: "recherche une altern"; }
+   81%, 82% { content: "recherche une alternan"; }
+   83%, 84% { content: "recherche une alternance"; }
+  
+   86%, 86% { content: "recherche une alternance"; }
+  
+  }
+  
+  
+  @keyframes blink {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0; }
+  }
+  
+  .typewriter {
+	--caret: currentcolor;
+  }
+  
+  .typewriter::before {
+	content: "";
+	animation: typing 13.5s infinite;
+  }
+  
+  .typewriter::after {
+	content: "";
+	border-right: 1px solid var(--caret);
+	animation: blink 0.5s linear infinite;
+  }
+  
+  .typewriter.thick::after {
+	border-right: 1ch solid var(--caret);
+  }
+  
+  .typewriter.nocaret::after {
+	border-right: 0;
+  }
+  
+  
+  @media (prefers-reduced-motion) {
+	.typewriter::after {
+	  animation: none;
+	}
+	
+	@keyframes sequencePopup {
+	  0%, 100% { content: "developer"; }
+	  25% { content: "writer"; }
+	  50% { content: "reader"; }
+	  75% { content: "human"; }
+	}
+  
+	.typewriter::before {
+	  content: "developer";
+	  animation: sequencePopup 12s linear infinite;
+	}
+  }
+
+
+
+  .background-img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+  }
+
+  .eye {
+	width: 25px;
+	height: 25px;
+	background: white;
+	border: 2px solid #000;
+	border-radius: 50%;
+	position: absolute;
+	z-index: 10;
+  }
+  
+  .pupil {
+	width: 7px;
+	height: 7px;
+	background: #000;
+	border-radius: 50%;
+	position: absolute;
+	top: 9px;   
+	left: 9px;
+	transition: top 0.05s, left 0.05s;
+  }
+  
+  .eye.left {
+	top: 78px;  
+	left: 132px;
+  }
+  
+  .eye.right {
+	top: 78px;
+	left: 180px;
+  }
+
+  .eye, .pupil {
+  backface-visibility: hidden;
+}
+
+
+  .animate-pulse {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        article#projects {
+      width: 100vw;
+    }
+
+    .project-scroll-outer {
+  height: 500vh;
+  position: relative;
+}
+
+.project-scroll-outer > div {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.project-group {
+  display: flex;
+  transition: transform 0.2s ease-out;
+}
+
+.project-slide {
+  flex: 0 0 100vw;
+}
+
+.progress {
+  position: fixed;
+  left: 0;
+  bottom: 40px;
+  height: 5px;
+  background: #15BFA3;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: 50;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Yeux sur une image</title>
+  <style>
+    body {
+      margin: 0;
+      background: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      position: relative;
+    }
+
+    .background-img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .eye {
+      width: 25px;
+      height: 25px;
+      background: white;
+      border: 2px solid #000;
+      border-radius: 50%;
+      position: absolute;
+      overflow: hidden;
+    }
+
+    .pupil {
+      width: 7px;
+      height: 7px;
+      background: #000;
+      border-radius: 50%;
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      transition: top 0.05s, left 0.05s;
+    }
+
+    /* Positionne chaque œil selon ton image */
+    .eye.left {
+      top: 80px;  /* ajuste ici */
+      left: 100px;
+    }
+
+    .eye.right {
+      top: 97px;  /* ajuste ici */
+      left: 265px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Remplace cette image par celle de ton choix -->
+  <img src="assets/deffc199-785e-41a6-a1eb-942bebc1dc7d-removebg-preview.png" alt="visage" class="background-img">
+
+  <div class="eye left"><div class="pupil"></div></div>
+  <div class="eye right"><div class="pupil"></div></div>
+</div>
+
+<script>
+  const eyes = document.querySelectorAll('.eye');
+
+  document.addEventListener('mousemove', (e) => {
+    eyes.forEach(eye => {
+      const pupil = eye.querySelector('.pupil');
+      const rect = eye.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+
+      const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
+      const radius = 8;
+      const offsetX = radius * Math.cos(angle);
+      const offsetY = radius * Math.sin(angle);
+
+      pupil.style.left = `${14 + offsetX}px`;
+      pupil.style.top = `${14 + offsetY}px`;
+    });
+  });
+</script>
+
+</body>
+</html>
+
+
+

@@ -28,18 +28,6 @@
             100% { transform: rotate(0deg) translateX(0px); }
         }
     </style>
-    <style>
-        .animate-pulse {
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.7; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-    </style>
 </head>
 <body id="real-content" class="hidden m-0 bg-gray-900 text-white pt-[80px] pb-[70px] md:pt-[200px] md:pb-0">
         <div id="skeleton" class="animate-pulse flex flex-col gap-4">
@@ -47,33 +35,32 @@
             <div class="h-4 bg-gray-700 rounded w-1/2"></div>
             <div class="h-4 bg-gray-700 rounded w-full"></div>
         </div>
-    <header class="fixed hidden md:flex top-0 left-0 w-full z-50 bg-gray-900/70 backdrop-blur-md transition-opacity duration-300 flex justify-between items-center px-10 py-5">
+    <header class="fixed hidden md:flex top-0 left-0 w-full z-50 bg-gray-900/70 backdrop-blur-md transition-opacity duration-300 flex justify-between items-center px-10 py-2">
         <img class="h-[130px]" src="assets/Yellow_Black_Modern_Bulb_Tech_Logo_Design-2-removebg-preview.png" alt="Logo">
         <div class="flex flex-col items-end">
-            <a href="assets/Orange et Bleu Duotone Conseiller pédagogique CV.pdf" target="_blank" 
-            class="mb-4 bg-[#15BFA3] text-black py-2 px-6 rounded-lg font-bold hover:bg-[#13a38c] transition">
-                Mon CV
-            </a>
             <nav>
                 <ul class="flex space-x-5">
-                    <li class="p-2 border-2 border-[#15BFA3] rounded-md text-[#15BFA3] hover:bg-[#15BFA3] hover:text-white">
-                        <a href="#projets" class="flex items-center space-x-2">
-                            <i class="fas fa-briefcase md:hidden"></i>
-                            <span class="hidden md:inline">Mon Portfolio</span>
+                    <li class="li-btn">
+                        <a href="#projets" class="flex items-center space-x-2 relative z-10">
+                          <i class="fas fa-briefcase md:hidden"></i>
+                          <span class="hidden md:inline">Mes Projets</span>
                         </a>
-                    </li>
-                    <li class="p-2 border-2 border-[#15BFA3] rounded-md text-[#15BFA3] hover:bg-[#15BFA3] hover:text-white">
+                      </li>
+                    <li class="li-btn">
                         <a href="#presentation" class="flex items-center space-x-2">
                             <i class="fas fa-user md:hidden"></i>
                             <span class="hidden md:inline">Qui suis-je ?</span>
                         </a>
                     </li>
-                    <li class="p-2 border-2 border-[#15BFA3] rounded-md text-[#15BFA3] hover:bg-[#15BFA3] hover:text-white">
+                    <li class="li-btn">
                         <a href="#contact" class="flex items-center space-x-2">
                             <i class="fas fa-envelope md:hidden"></i>
                             <span class="hidden md:inline">Me contacter</span>
                         </a>
                     </li>
+                    <li class="li-btn"><a href="assets/Orange et Bleu Duotone Conseiller pédagogique CV.pdf" target="_blank">
+                            Mon CV
+                        </a></li>
                 </ul>
             </nav>
         </div>
@@ -100,270 +87,226 @@
     </nav>
 
     <section class="flex flex-col md:flex-row items-center md:items-start">
-        <div id="card"
-            class="order-1 md:order-2 w-[50%] md:w-72 h-[400px] mt-6 md:mt-0 hover:rounded-xl rounded-xl overflow-hidden shadow-xl transition-transform duration-300 ease-out bg-center flex flex-col items-center p-4 md:ml-28"
-            style="background-image: url('https://via.placeholder.com/300x420')">
-            <div class="w-full h-[240px] md:w-52 md:h-52 bg-[#15BFA3] flex justify-center items-center rounded-xl">
-                <img class="w-full h-full object-cover rounded-xl" src="assets/deffc199-785e-41a6-a1eb-942bebc1dc7d-removebg-preview.png" alt="">
+        <div class="order-1 md:order-2 md:ml-28 flip-card">
+            <div class="flip-card-inner">
+              <!-- Face avant -->
+              <div class="flip-card-front flex hover:hidden">
+                <img src="assets/deffc199-785e-41a6-a1eb-942bebc1dc7d-removebg-preview.png" alt="Avatar Lévy" class="absolute left-4">
+                
+                <div class="bubble h-[40px] mt-[80px] mr-[15px] border-2 border-[#15BFA3] p-2 hidden md:block">
+                  <p class="relative bottom-[4px]">Hover me</p>
+                </div>
+              
+                <!-- Yeux -->
+                <div class="eye left"><div class="pupil"></div></div>
+                <div class="eye right"><div class="pupil"></div></div>
+              </div>
+              
+        
+              <!-- Face arrière -->
+                <div class="flip-card-back">
+                    <h2>NYAMSI LEVY</h2>
+                    <em>Développeur Web en recherche d'alternance</em>
+                    <p class="text-[14px] mt-2">
+                        Entre design pixel-perfect et API bien pensées,
+                        je souhaite créer des expériences fluides et utiles. 
+                        J’apprends vite, je code propre,
+                       et je code avec passion, pixel par pixel. <br> <br>
+                        
+                    </p>
+                    <em class="mt-4 text-[12px]">Disponible pour une alternance dès Septembre 2025.</em>
+                </div>
             </div>
-            <div class="text-center mt-4">
-                <h3 class="text-base md:text-lg font-semibold italic">NYAMSI Lévy</h3>
-                <h6 class="italic text-[#15BFA3] text-sm md:text-base">Développeur Web</h6>
-                <p class="text-xs md:text-sm text-gray-200 mt-2">“Un bon design est invisible. Mais un mauvais, on ne voit que ça.”</p>
-            </div>
-            <div class="holo rounded-xl"></div>
         </div>
 
         <div class="order-2 mt-2 md:mt-0 md:order-1 w-full md:w-[60%] px-5 md:ml-[20px] md:pr-[30px]">
-            <h1 class="mt-4 text-2xl md:text-[32px] text-[#15BFA3] text-center md:text-left">Hello ! Moi c’est Lévy !</h1>
+            <h1 aria-label="Hey! Je m'appelle Nyamsi Lévy" class="text-3xl md:text-[28px] text-[17px] font-bold text-[#15BFA3] mt-4 md:mt-0">
+                Hey ! Je &nbsp;<span class="typewriter"></span>
+              </h1>
             <p class="mt-2 text-sm md:text-base text-justify">
-                Un jeune développeur web passionné par le code et le design. Pour moi, le développement, ce n’est pas juste écrire des lignes de code : c’est créer des expériences fluides, accessibles et impactantes. J’aime concevoir des interfaces intuitives et optimiser des fonctionnalités pour qu’elles soient aussi performantes que plaisantes à utiliser.<br>
-                Actuellement en formation Développement Web & Mobile à Epitech, je cherche une alternance à partir de septembre 2025 pour continuer à apprendre et évoluer au sein d’une équipe motivante. J’aime les environnements dynamiques, le travail en équipe et surtout, résoudre des problèmes de manière créative.
+                Moi c'est Lévy, jeune développeur web passionné par le code et le design. Pour moi, le développement, ce n’est pas juste écrire des lignes de code : c’est créer des expériences fluides, accessibles et impactantes. J’aime concevoir des interfaces intuitives et optimiser des fonctionnalités pour qu’elles soient aussi performantes que plaisantes à utiliser.<br> <br>
+                Actuellement en formation Développement d'application Web & Mobile à Epitech, je suis à la recherche d'une alternance à partir de septembre 2025 pour continuer à apprendre et évoluer au sein d’une équipe motivante. J’aime les environnements dynamiques, le travail en équipe et surtout, résoudre des problèmes de manière créative.
             </p>
 
             <h3 class="mt-4 text-[#15BFA3] text-center md:text-left">Voici les techos & outils que j’utilise :</h3>
-            <div class="flex mt-2 overflow-x-auto md:overflow-hidden relative w-full md:w-[550px] h-[80px]">
+            <div class="flex mt-2 overflow-x-auto md:overflow-hidden relative w-full md:w-[848px] h-[80px]">
                 <div id="slider" class="absolute md:relative flex h-full gap-4">
-                    <i class="fa-brands fa-figma text-[80px] mr-4"></i>
+                    <img src="assets/unnamed-removebg-preview.png" class="h-[80px]" alt="logo figma">
                     <i class="fa-brands fa-square-github mr-4 text-purple-600 text-[80px]"></i>
+                    <img class="h-[80px]" src="assets/images-removebg-preview.png" alt="tailwind css">
+                    <img class="h-[70px] mr-4" src="assets/66d5238900aab3d7b86dc5e53a77c817.jpg" alt="Typescript">
                     <i class="fa-brands fa-react mr-4 text-[80px] text-[#74C0FC]"></i>
-                    <img class="h-[70px] mr-4" src="assets/66d5238900aab3d7b86dc5e53a77c817.jpg" alt="">
-                    <img class="h-[80px] mr-4" src="assets/a96daef60fbaed1c3b4af85568a69b3f-removebg-preview.png" alt="">
-                    <img class="h-[80px]" src="assets/images-removebg-preview.png" alt="">
+                    <img src="assets/NodeJS-1-scaled-removebg-preview.png" alt="Node js">
+                    <img class="h-[80px] mr-4" src="assets/a96daef60fbaed1c3b4af85568a69b3f-removebg-preview.png" alt="Symfony">
+                    <img src="assets/laravel-logo-removebg-preview.png" alt="Laravel">
+                    <img src="assets/mysql.png" alt="Mysql">
+                    
+                    <img src="assets/png-transparent-postgresql-plain-wordmark-logo-icon-thumbnail-removebg-preview.png" alt="PostgresSql">
+                    <img src="assets/2092986-removebg-preview.png" class="h-[70px]" alt="Postman">
+                    <img src="assets/docker-post-removebg-preview.png" alt="Docker">
+                    <img src="assets/python-programming-language-removebg-preview.png" alt="python">
 
-                    <i class="fa-brands fa-figma text-[80px] mr-4"></i>
+                    <img src="assets/unnamed-removebg-preview.png" class="h-[80px]" alt="logo figma">
                     <i class="fa-brands fa-square-github mr-4 text-purple-600 text-[80px]"></i>
+                    <img class="h-[80px]" src="assets/images-removebg-preview.png" alt="tailwind css">
+                    <img class="h-[70px] mr-4" src="assets/66d5238900aab3d7b86dc5e53a77c817.jpg" alt="Typescript">
                     <i class="fa-brands fa-react mr-4 text-[80px] text-[#74C0FC]"></i>
-                    <img class="h-[70px] mr-4" src="assets/66d5238900aab3d7b86dc5e53a77c817.jpg" alt="">
-                    <img class="h-[80px] mr-4" src="assets/a96daef60fbaed1c3b4af85568a69b3f-removebg-preview.png" alt="">
-                    <img class="h-[80px]" src="assets/images-removebg-preview.png" alt="">
+                    <img src="assets/NodeJS-1-scaled-removebg-preview.png" alt="Node js">
+                    <img class="h-[80px] mr-4" src="assets/a96daef60fbaed1c3b4af85568a69b3f-removebg-preview.png" alt="Symfony">
+                    <img src="assets/laravel-logo-removebg-preview.png" alt="Laravel">
+                    <img src="assets/mysql.png" alt="Mysql">
+                    <img src="assets/png-transparent-postgresql-plain-wordmark-logo-icon-thumbnail-removebg-preview.png" alt="PostgresSql">
+                    <img src="assets/2092986-removebg-preview.png" class="h-[70px]" alt="Postman">
+                    <img src="assets/docker-post-removebg-preview.png" alt="Docker">
+                    <img src="assets/python-programming-language-removebg-preview.png" alt="python">
                 </div>
             </div>
 
-            <h4 class="mt-2 text-[#15BFA3] text-center md:text-left">
+            <h4 class="mt-2 text-[#15BFA3] text-center text-[14px] md:text-left">
                 Je suis bien sûr ouvert à découvrir de nouvelles technos & de nouveaux outils.
             </h4>
         </div>
     </section>
 
-    <section id="projets" class="text-center px-4 pt-24 md:pt-[160px]" data-aos="fade-up"
-    data-aos-duration="3000">
-        <h2 class="text-[28px] text-[#15BFA3] animate__animated animate__bounce">Mes projets</h2>
+    <section id="projets" class="mt-28">
+  <article id="projects">
+    <h2 class="md:text-4xl text-2xl text-[#15BFA3] font-bold text-center">Mes Projets</h2>
 
-        <!-- Carrousel wrapper -->
-        <div class="relative max-w-6xl mx-auto mt-10">
+    <!-- Conteneur de scroll vertical avec scroll horizontal interne -->
+    <section class="project-scroll-outer mt-10">
+      <div>
+        <ul class="project-group text-white w-[95%] max-w-7xl p-4 sm:p-6 rounded-xl relative flex gap-10 mt-12">
+          <!-- Projet 1 -->
+          <li class="project-slide bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6 shadow-xl shadow-black rounded-xl mt-12">
+            <div class="md:flex-1 flex md:mt-8 mt-12 p-2">
+              <img src="assets/Capture d’écran 2025-04-22 à 18.31.20.png" alt="Real Madrid" class="rounded-lg w-full md:h-[300px] h-[250px] md:object-contain mx-auto md:mt-8" />
+            </div>
+            <div class="flex-1 flex flex-col md:justify-between mt-0 md:mt-8">
+              <div class="md:mt-8 mt-0">
+                <h3 class="text-[#15BFA3] md:text-xl font-bold mb-3">📰 News Madrid <br>– Blog d'actualités sur le Real Madrid</h3>
+                <p class="leading-relaxed text-[14px]">Ce projet est mon premier en développement web. <br> J'ai créé un blog sur l'actualité du Real Madrid en HTML et CSS. <br> Ce site m’a permis d’appliquer mes premières compétences en structuration de contenu. Travailler sur un sujet qui me passionne a renforcé ma motivation.</p>
+              </div>
+              <div class="block mt-4 md:mt-0">
+                <a href="https://madrid-nine.vercel.app/index.html" target="_blank" class="button-creative py-2 px-4">Voir le site</a>
+                <a href="https://github.com/134753/blog_madrid" target="_blank" class="button-creative py-2 px-4">Voir le code sur GitHub</a> 
+              </div>
+            
+            </div>
+          </li>
 
-            <!-- Flèches pour mobile -->
-            <button onclick="scrollCarousel(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-[#15BFA3] p-2 rounded-full z-10 md:hidden">
-                <i class="fas fa-chevron-left text-white"></i>
-            </button>
-            <button onclick="scrollCarousel(1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-[#15BFA3] p-2 rounded-full z-10 md:hidden">
-                <i class="fas fa-chevron-right text-white"></i>
-            </button>
+          <!-- Projet 3 -->
+          <li class="project-slide bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6 shadow-xl shadow-black rounded-xl mt-12">
+            <div class="md:flex-1 flex md:mt-8 mt-12 p-2">
+              <img src="assets/Capture d’écran 2025-04-17 à 10.10.45.png" alt="PLateforme de rencontre" class="rounded-lg w-full md:h-[300px] h-[220px] object-contain mx-auto mt-10" />
+            </div>
+            <div class="flex-1 flex flex-col md:justify-between mt-0 md:mt-8">
+              <div class="md:mt-8 mt-0">
+                <h3 class="md:mt-4 text-[#15BFA3] md:text-2xl font-bold mb-3">❤️ Plateforme de rencontre</h3>
+                <p class="text-[12px] md:text-[14px] leading-relaxed">Dans le cadre d’un projet scolaire, j’ai développé une plateforme de rencontre type Meetic. <br> Elle inclut l’inscription, la connexion sécurisée et l’affichage dynamique des profils. Le back-end a été réalisé en PHP avec le modèle MVC. <br> Ce projet m’a appris à structurer une application web dynamique. J’y ai compris les bases des interactions client-serveur. Il m’a aussi familiarisé avec l’architecture MVC.</p>
+              </div>
+              <div class="block mt-4 md:mt-0">
+                <a href="https://github.com/134753/Projet_meetic" target="_blank" class="button-creative py-2 px-4">Voir le code sur GitHub</a>
+              </div>
+            </div>
+          </li>
 
-            <!-- Carrousel / grille -->
-            <div id="carousel" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth md:flex-wrap md:justify-center md:overflow-visible gap-6 md:gap-14 px-2">
+          <!-- Projet 4 -->
+          <li class="project-slide bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6 shadow-xl shadow-black rounded-xl mt-12">
+            <div class="md:flex-1 flex md:mt-8 mt-12 p-2">
+              <video src="assets/ede7dcdb8246454db589d7e68bab48e2.MOV" alt="Twitter Clone" class="rounded-lg w-full object-contain mx-auto mt-10 md:h-[300px] h-[220px]" 
+              controls 
+              autoplay 
+              muted 
+              loop>
+              </video>
+            </div>
+            <div class="flex-1 flex flex-col md:justify-between mt-0 md:mt-8">
+              <div>
+                <h3 class="tmd:mt-4 text-[#15BFA3] md:text-2xl font-bold mb-3">Réseau Social – Twitter Clone</h3>
+                <p class="text-[13px] md:[14px] leading-relaxed">Ce projet avait pour objectif de concevoir une plateforme sociale inspirée de Twitter, avec des fonctionnalités clés comme la publication de messages, la création de comptes, le fil d’actualité, et les interactions entre utilisateurs.
+                Ce projet m’a permis de renforcer mes compétences en développement full stack, mais aussi de découvrir les bonnes pratiques du travail en groupe : gestion de version, répartition des tâches, résolution de conflits Git, et communication efficace.</p>
+              </div>
+              <div class="block mt-2 md:mt-0">
+                <a href="https://github.com/134753/Projet_Twitter" target="_blank" class="button-creative py-2 px-4">Voir le code sur GitHub</a>
+              </div>
+            </div>
+          </li>
 
-            <div onclick="openModal('modal1')" class="w-full shrink-0 snap-start md:w-[250px] md:h-[350px] bg-gray-900 shadow-xl shadow-black rounded-xl p-4 overflow-hidden relative cursor-pointer group">
-                <img class="mx-auto h-[150px] rounded-lg mb-3" src="assets/fa4f0db883d36fbfcfe76c06d9012be0-removebg-preview.png" alt="logo Madrid">
-                <h4 class="text-[#15BFA3] text-lg">Mini-blog Real Madrid</h4>
-                <p class="text-sm mt-4">Développement d'un blog sur le Réal Madrid en HTML/CSS.</p>
-                <div class="absolute inset-0 bg-[#15BFA3]/90 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center rounded-xl">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+          <!-- Projet 5 -->
+          <li class="project-slide bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6 shadow-xl shadow-black rounded-xl mt-12">
+            <div class="md:flex-1 flex md:mt-8 mt-12 p-2">
+              <img src="assets/puissan4.jpeg.png" alt="Puissance 4" class="rounded-lg w-full md:h-[280px] h-[200px] object-contain mx-auto mt-8" />
+            </div>
+            <div class="flex-1 flex flex-col md:justify-between mt-0 md:mt-8">
+              <div>
+                <h3 class="text-[#15BFA3] md:text-2xl font-bold mb-3">🎮 Jeu Puissance 4</h3>
+                <p class="mt-2 text-[14px] leading-relaxed">Dans ce projet, j’ai développé une version interactive du célèbre jeu Puissance 4, en JavaScript vanilla (pur, sans framework). L’objectif principal était de manipuler le DOM dynamiquement, gérer les événements utilisateurs et implémenter la logique de jeu complète : alternance des tours, placement des jetons, détection des victoires horizontales, verticales et diagonales.</p>
+              </div>
+              <div class="block mt-6 md:mt-0">
+                <a href="https://puissance4134753.vercel.app" target="_blank" class="button-creative py-2 px-4">Jouer</a>
+                <a href="https://github.com/134753/puissance4" target="_blank" class="button-creative py-2 px-4">Voir le code sur GitHub</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Projet 6 -->
+          <li class="project-slide bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6 shadow-xl shadow-black rounded-xl">
+            <div class="flex-1 mt-8">
+              <video 
+              src="assets/67122bd3757048e78c8246c42ce86d31.MOV" 
+              alt="SnapchainX preview" 
+              class="rounded-lg w-full max-h-[350px] object-contain mx-auto mt-8" 
+              controls 
+              autoplay 
+              muted 
+              loop>
+              </video>
+            </div>
+  
+            <div class="flex-1 flex flex-col justify-between mt-8">
+              <div>
+                <h3 class="text-[#15BFA3] text-2xl font-bold mb-3">📱 SnapchainX – App mobile inspirée de Snapchat</h3>
+                <p class="text-sm leading-relaxed">
+                  SnapchainX est une application mobile développée avec React Native (Expo) qui permet :
+                  <ul class="list-disc list-inside mt-2 text-sm">
+                    <li>de prendre des photos avec la caméra native</li>
+                    <li>de basculer entre caméra avant/arrière</li>
+                    <li>d’enregistrer et envoyer les snaps à ses amis via API</li>
+                    <li>de visualiser ses amis et gérer ses snaps</li>
+                  </ul> <br>
+                  L'application est testable sur Expo Go.
+                </p>
+              </div>
+  
+              <div class="mt-4">
+                <a href="https://github.com/134753/snapchainx" target="_blank" class="button-creative py-2 px-4">Voir le code sur GitHub</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="project-slide bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6 shadow-xl shadow-black rounded-xl">
+              <div class="flex-1 mt-4">
+                <img src="assets/trading-en-ligne-1500x1001.jpg" alt="TradBot" class="rounded-lg w-full max-h-[250px] sm:max-h-[300px] object-contain mx-auto" />
+              </div>
+            <div class="flex-1 flex flex-col justify-between mt-8">
+                <div>
+                  <h3 class="text-[#15BFA3] text-2xl font-bold mb-3">📈 TradBot – Bot de suivi et d’analyse financière (en cours)</h3>
+                  <p class="text-sm leading-relaxed">TradBot est un projet personnel en cours de développement, visant à créer un assistant intelligent capable de récupérer, analyser et traiter des données financières en temps réel. Grâce à des APIs comme Yahoo Finance ou Forex, le bot collecte des informations sur les marchés (cours des devises, actions, indicateurs, etc.) et les analyse selon des logiques personnalisées.</p>
+                </div>
+                <div class="">
+                    <a href="https://github.com/134753/Tradbot" target="_blank" class="button-creative py-2 px-4">Voir le code sur GitHub</a>
                 </div>
             </div>
-
-            <div onclick="openModal('modal3')" class="w-full shrink-0 snap-start md:w-[250px] md:h-[350px] bg-gray-900 shadow-xl shadow-black rounded-xl p-4 overflow-hidden relative cursor-pointer group">
-                <img class="mx-auto h-[150px] rounded-lg mb-3" src="assets/White Grey Red Vintage Illustrative Love Logo.png" alt="logo plateforme de rencontre">
-                <h4 class="text-[#15BFA3] text-lg">Plateforme de rencontres</h4>
-                <p class="text-sm mt-4">Développement d'une plateforme de rencontre en PHP & MySQL.</p>
-                <div class="absolute inset-0 bg-[#15BFA3]/90 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center rounded-xl">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
-                </div>
-            </div>
-
-            <div onclick="openModal('modal4')" class="w-full shrink-0 snap-start md:w-[250px] md:h-[350px] bg-gray-900 shadow-xl shadow-black rounded-xl p-4 overflow-hidden relative cursor-pointer group">
-                <img class="mx-auto h-[150px] rounded-lg mt-3" src="assets/Black_Illustration_Ninja_Esport_Or_Gaming_Mascot_Logo_-3-removebg-preview.png" alt="logo réseau social">
-                <h4 class="text-[#15BFA3] text-lg">Réseau social type Twitter</h4>
-                <p class="text-sm mt-4">Développement d'un réseau social en PHP, Tailwind & MySQL.</p>
-                <div class="absolute inset-0 bg-[#15BFA3]/90 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center rounded-xl">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
-                </div>
-            </div>
-
-            <div onclick="openModal('modal5')" class="w-full shrink-0 snap-start md:w-[250px] md:h-[350px] bg-gray-900 shadow-xl shadow-black rounded-xl p-4 overflow-hidden relative cursor-pointer group">
-                <img class="mx-auto h-[150px] rounded-lg mb-3" src="assets/d844896c477478b2d00d2032ef82ab34-removebg-preview.png" alt="Puissance 4">
-                <h4 class="text-[#15BFA3] text-lg">Jeu Puissance 4</h4>
-                <p class="text-sm mt-4">Jeu interactif en JavaScript.</p>
-                <div class="absolute inset-0 bg-[#15BFA3]/90 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center rounded-xl">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
-                </div>
-            </div>
-            <div onclick="openModal('modal6')" class="w-full shrink-0 snap-start md:w-[250px] md:h-[350px] bg-gray-900 shadow-xl shadow-black rounded-xl p-4 overflow-hidden relative cursor-pointer group">
-                <img class="mx-auto h-[150px] rounded-lg mt-2 mb-3" src="assets/logo.png" alt="SnapchainX">
-                <h4 class="text-[#15BFA3] text-lg">NovaChain – App Mobile</h4>
-                <p class="text-sm mt-4">App React Native inspirée de Snapchat avec prise de photo, envoi, API et Expo Go.</p>
-                <div class="absolute inset-0 bg-[#15BFA3]/90 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center rounded-xl">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
-                </div>
-            </div>
-              
-            <div onclick="openModal('modal7')" class="w-full shrink-0 snap-start md:w-[250px] md:h-[350px] bg-gray-900 shadow-xl shadow-black rounded-xl p-4 overflow-hidden relative cursor-pointer group">
-                <img class="mx-auto h-[150px] rounded-lg mb-3" src="assets/0-1.jpg" alt="Trading">
-                <h4 class="text-[#15BFA3] text-lg">TradBot (en cours)</h4>
-                <p class="text-sm mt-4">Bot Discord en Python (marchés financiers).</p>
-                <div class="absolute inset-0 bg-[#15BFA3]/90 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center rounded-xl">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
-                </div>
-            </div>
-        </div>
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <div id="modal1" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center overflow-y-auto">
-        <div class="bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6">
-            <button onclick="closeModal('modal1')" class="absolute top-3 right-4 text-gray-400 hover:text-white text-2xl font-bold">&times;</button>
-            <div class="flex-1 mt-8 sm:mt-12">
-                <img src="assets/Capture d’écran 2025-04-22 à 18.31.20.png" alt="Real Madrid" class="rounded-lg w-full max-h-[250px] sm:max-h-[300px] object-contain mx-auto" />
-            </div>
-            <div class="flex-1 flex flex-col justify-between">
-                <div>
-                    <h3 class="text-[#15BFA3] text-xl font-bold mb-3">📰 News Madrid <br>– Blog d'actualités sur le Real Madrid</h3>
-                    <p class="text-sm leading-relaxed">Ce projet marque mes débuts en développement web. J'ai réalisé ce blog à la main en HTML et CSS pour couvrir l'actualité du Real Madrid, un sujet qui me passionne. L'objectif était de créer une interface claire et fonctionnelle avec plusieurs sections : accueil, actualités, calendrier des matchs et présentation de l'équipe.
-                    Ce site m’a permis de mettre en pratique mes premières compétences en structuration de contenu tout en liant le code à un sujet qui me motive vraiment.</p>
-                </div>
-                <div class="mt-6 block">
-                    <a href="https://madrid-nine.vercel.app/index.html" target="_blank" class="button-creative py-2 px-4">Voir le site</a>
-                    <a href="https://github.com/134753/blog_madrid" target="_blank" class="button-creative py-2 px-4">Voir le code sur GitHub</a> 
-                </div>
-                
-            </div>
-        </div>
-    </div>
+  </article>
+</section>
 
-    <div id="modal2" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center overflow-y-auto">
-        <div class="bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6">
-            <button onclick="closeModal('modal2')" class="absolute top-3 right-4 text-gray-400 hover:text-white text-2xl font-bold">&times;</button>
-            <div class="flex-1">
-                <img src="assets/screenshot_2.png" alt="Maquette" class="rounded-lg w-full md:h-[500px] h-[300px] object-contain mx-auto" />
-            </div>
-            <div class="flex-1 flex flex-col justify-between">
-            <div>
-                <h3 class="text-[#15BFA3] text-2xl font-bold mb-3">📱 Reproduction responsive d'une maquette – Projet scolaire</h3>
-                <p class="text-sm leading-relaxed">Ce projet avait pour objectif de reproduire à l’identique une maquette fournie, en respectant chaque détail visuel et structurel. Réalisé dans un cadre scolaire, l’accent était mis sur la précision du code et la fidélité au design original, comme pour une commande réelle en agence.
-                Ce projet m’a formé à une rigueur professionnelle et à la logique du pixel-perfect tout en me familiarisant avec les bonnes pratiques du développement web moderne.</p>
-            </div>
-            <div class="mt-6">
-                <a href="https://github.com/134753/maquette" target="_blank" class="button-creative py-2 px-4">Voir le code sur GitHub</a>
-            </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal3" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center overflow-y-auto">
-        <div class="bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6">
-            <button onclick="closeModal('modal3')" class="absolute top-3 right-4 text-gray-400 hover:text-white text-2xl font-bold">&times;</button>
-            <div class="flex-1 mt-4">
-                <img src="assets/Capture d’écran 2025-04-17 à 10.10.45.png" alt="PLateforme de rencontre" class="rounded-lg w-full max-h-[250px] sm:max-h-[300px] object-contain mx-auto" />
-            </div>
-            <div class="flex-1 flex flex-col justify-between">
-            <div>
-            <h3 class="text-[#15BFA3] text-2xl font-bold mb-3">❤️ Plateforme de rencontre</h3>
-            <p class="text-sm leading-relaxed">Dans le cadre d’un projet scolaire, j’ai développé une plateforme de type Meetic, avec gestion des utilisateurs, inscription, connexion sécurisée, et affichage dynamique des profils. Le back-end a été entièrement codé en PHP, en suivant le modèle MVC (Modèle-Vue-Contrôleur) pour structurer proprement l’application.
-            Ce projet m’a permis de comprendre les bases d’une application web dynamique, de gérer les interactions client-serveur, et de me familiariser avec l’architecture MVC.</p>
-        </div>
-        <div class="mt-6">
-            <a href="https://github.com/134753/Projet_meetic" target="_blank" class="button-creative py-2 px-4">Voir le code sur GitHub</a>
-        </div>
-        </div>
-    </div>
-    </div>
-
-    <div id="modal4" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center overflow-y-auto">
-        <div class="bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6">
-            <button onclick="closeModal('modal4')" class="absolute top-3 right-4 text-gray-400 hover:text-white text-2xl font-bold">&times;</button>
-            <div class="flex-1 mt-4">
-                <img src="assets/twitter.png" alt="Twitter Clone" class="rounded-lg w-full object-contain mx-auto" />
-            </div>
-            <div class="flex-1 flex flex-col justify-between">
-            <div>
-                <h3 class="text-[#15BFA3] text-2xl font-bold mb-3">Réseau Social – Twitter Clone</h3>
-                <p class="text-sm leading-relaxed">Ce projet avait pour objectif de concevoir une plateforme sociale inspirée de Twitter, avec des fonctionnalités clés comme la publication de messages, la création de comptes, le fil d’actualité, et les interactions entre utilisateurs.
-                Ce projet m’a permis de renforcer mes compétences en développement full stack, mais aussi de découvrir les bonnes pratiques du travail en groupe : gestion de version, répartition des tâches, résolution de conflits Git, et communication efficace.</p>
-            </div>
-            <div class="mt-6">
-                <a href="https://github.com/134753/Projet_Twitter" target="_blank" class="button-creative py-2 px-4">Voir le code sur GitHub</a>
-            </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal5" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center overflow-y-auto">
-        <div class="bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6">
-            <button onclick="closeModal('modal5')" class="absolute top-3 right-4 text-gray-400 hover:text-white text-2xl font-bold">&times;</button>
-            <div class="flex-1 mt-4">
-                <img src="assets/puissan4.jpeg.png" alt="Puissance 4" class="rounded-lg w-full max-h-[250px] sm:max-h-[300px] object-contain mx-auto" />
-            </div>
-            <div class="flex-1 flex flex-col justify-between">
-                <div>
-                    <h3 class="text-[#15BFA3] text-2xl font-bold mb-3">🎮 Jeu Puissance 4</h3>
-                    <p class="text-sm leading-relaxed">Dans ce projet, j’ai développé une version interactive du célèbre jeu Puissance 4, en JavaScript vanilla (pur, sans framework). L’objectif principal était de manipuler le DOM dynamiquement, gérer les événements utilisateurs et implémenter la logique de jeu complète : alternance des tours, placement des jetons, détection des victoires horizontales, verticales et diagonales.</p>
-                </div>
-                <div class="mt-6">
-                    <a href="https://github.com/134753/puissance4" target="_blank" class="button-creative py-2 px-4">Voir le code sur GitHub</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal6" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center overflow-y-auto">
-        <div class="bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6">
-          <button onclick="closeModal('modal6')" class="absolute top-3 right-4 text-gray-400 hover:text-white text-2xl font-bold">&times;</button>
-          
-          <div class="flex-1 mt-4">
-            <img src="assets/IMG_5916.PNG" alt="SnapchainX preview" class="rounded-lg w-full max-h-[350px] object-contain mx-auto" />
-          </div>
-      
-          <div class="flex-1 flex flex-col justify-between">
-            <div>
-              <h3 class="text-[#15BFA3] text-2xl font-bold mb-3">📱 SnapchainX – App mobile inspirée de Snapchat</h3>
-              <p class="text-sm leading-relaxed">
-                SnapchainX est une application mobile développée avec React Native (Expo) qui permet :
-                <ul class="list-disc list-inside mt-2 text-sm">
-                  <li>de prendre des photos avec la caméra native</li>
-                  <li>de basculer entre caméra avant/arrière</li>
-                  <li>d’enregistrer et envoyer les snaps à ses amis via API</li>
-                  <li>de visualiser ses amis et gérer ses snaps</li>
-                </ul>
-                L’API est entièrement gérée via des appels sécurisés avec authentification par token. L'application est testable sur Expo Go.
-              </p>
-            </div>
-      
-            <div class="mt-6">
-              <a href="https://github.com/134753/snapchainx" target="_blank" class="button-creative py-2 px-4">Voir le code sur GitHub</a>
-            </div>
-          </div>
-        </div>
-    </div>
-      
-    
-    <div id="modal7" class="fixed inset-0 bg-black/70 z-50 hidden items-center justify-center overflow-y-auto">
-        <div class="bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6">
-            <button onclick="closeModal('modal7')" class="absolute top-3 right-4 text-gray-400 hover:text-white text-2xl font-bold">&times;</button>
-            <div class="flex-1 mt-4">
-                <img src="assets/trading-en-ligne-1500x1001.jpg" alt="TradBot" class="rounded-lg w-full max-h-[250px] sm:max-h-[300px] object-contain mx-auto" />
-            </div>
-            <div class="flex-1 flex flex-col justify-between">
-                <div>
-                    <h3 class="text-[#15BFA3] text-2xl font-bold mb-3">📈 TradBot – Bot de suivi et d’analyse financière (en cours)</h3>
-                    <p class="text-sm leading-relaxed">TradBot est un projet personnel en cours de développement, visant à créer un assistant intelligent capable de récupérer, analyser et traiter des données financières en temps réel. Grâce à des APIs comme Yahoo Finance ou Forex, le bot collecte des informations sur les marchés (cours des devises, actions, indicateurs, etc.) et les analyse selon des logiques personnalisées.</p>
-                </div>
-                <div class="mt-6">
-                    <a href="#projets"  class="button-creative py-2 px-4">Code pas encore disponible</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <!-- Barre de progression -->
+    <div class="progress hidden"></div>
     
     <section id="presentation" class="md:flex pt-8 md:pt-32 pb-2 md:pb-8">
         <div data-aos="flip-left" class="mt-14 ml-6 md:ml-12 ">
@@ -433,7 +376,7 @@
                     <div class="track w-full sm:w-[48%] md:w-[30%] flex bg-[#865D3F] text-white border border-[#865D3F] rounded-xl p-2 relative shadow-md transform transition duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(205,127,50,0.4)] hover:brightness-110">
                         <img class="h-[30px] w-[30px] shadow-md shadow-black m-2" src="assets/BDLM-Volume-1.jpg" alt="">
                         <div class="mt-2 text-start w-[55%]">
-                            <h6 class="text-[12px] font-semibold">Fast life &amp; famille</h6>
+                            <h6 class="text-[10px] font-semibold">Fast life &amp; famille</h6>
                             <p class="text-[8px]">Tiakola, HK la paille & Jolagreen23</p>
                         </div>
                         <i class="fa-solid fa-circle-play text-[20px] mt-4 ml-4 hover:text-gray-500 cursor-pointer"></i>
@@ -748,12 +691,42 @@
         </div>
     </section>
 
+    <footer class="bg-gray-900 text-white text-center py-4 mt-8">
+        <p>© NYAMSI Lévy</p>
+    </footer>
+
     <script src="main.js"></script>
     <script src="music.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
+              <script type="module">
+  import { animate, scroll } from "https://cdn.jsdelivr.net/npm/motion@12.23.0/+esm";
+
+  const items = document.querySelectorAll(".project-slide");
+
+  // Animation du scroll horizontal
+  scroll(
+    animate(".project-group", {
+      transform: ["none", `translateX(-${(items.length - 1) * 75}vw)`],
+    }),
+    {
+      target: document.querySelector(".project-scroll-outer"),
+      axis: "y",
+    }
+  );
+
+  // Barre de progression
+  scroll(
+  animate(".progress", { scaleX: [0, 1] }),
+  {
+    target: document.querySelector(".project-scroll-outer"),
+  }
+);
+
+</script>
+
     
 </body>
 </html>

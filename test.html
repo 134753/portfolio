@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Boutons 3D & Click Animés</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>  
   <style>
     body {
       background-color: #0f172a;
@@ -54,12 +56,156 @@
 .button-creative:hover {
   color: #00ffc3;
 }
+
+.btn {
+      position: relative;
+      padding: 16px 40px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
+      overflow: hidden;
+      z-index: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      width: 300%;
+      height: 300%;
+      background: linear-gradient(135deg, #00f5a0, #00d9f5);
+      transition: all 0.5s ease;
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0);
+    }
+
+    .btn:hover::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .btn:hover {
+      color: #0f172a;
+      transform: scale(1.05);
+    }
+
+    .ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+  background: radial-gradient(circle, #15BFA3, #13a18a);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.75;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(8);
+    opacity: 0;
+  }
+}
+
+.li-btn {
+  position: relative;
+  padding: 12px 24px;
+  border: 2px solid #15BFA3;
+  border-radius: 10px;
+  color: #15BFA3;
+  font-weight: bold;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  display: inline-block;
+  z-index: 0;
+}
+
+.li-btn::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(135deg, #00f5a0, #00d9f5);
+  transition: all 0.5s ease;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.li-btn:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.li-btn:hover {
+  color: #0f172a;
+  transform: scale(1.05);
+}
+
+.perspective {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
   </style>
 </head>
 <body>
 
+  <div class="w-[300px] h-[400px] perspective">
+    <div class="relative w-full h-full duration-700 transform-style-preserve-3d transition-transform hover:rotate-y-180">
+      
+      <!-- Front -->
+      <div class="absolute w-full h-full backface-hidden rounded-xl overflow-hidden shadow-xl">
+        <img src="assets/deffc199-785e-41a6-a1eb-942bebc1dc7d-removebg-preview.png" alt="Avatar" class="w-full h-full object-cover">
+      </div>
   
+      <!-- Back -->
+      <div class="absolute w-full h-full backface-hidden rotate-y-180 bg-[#0f172a] text-white rounded-xl p-6 flex flex-col justify-center items-center shadow-xl">
+        <h2 class="text-xl font-bold mb-2 text-[#15BFA3]">NYAMSI Lévy</h2>
+        <p class="italic text-sm text-[#15BFA3] mb-4">Développeur Web</p>
+        <p class="text-center text-sm leading-relaxed">
+          Passionné par la création de solutions web élégantes et fonctionnelles. J’aime transformer des idées en expériences numériques utiles et agréables.
+        </p>
+      </div>
+      
+    </div>
+  </div>
+  
+  
+
+  
+  <button class="btn">Ripple Effect</button>
   <button class="button-creative">3D Flip</button>
+  
+  
+    <li class="li-btn">
+      <a href="#projets" class="flex items-center space-x-2 relative z-10">
+        <i class="fas fa-briefcase md:hidden"></i>
+        <span class="hidden md:inline">Mon Portfolio</span>
+      </a>
+    </li>
+    
+
+  
+  
 
   <script>
     const button = document.querySelector('.button-creative');
@@ -75,6 +221,8 @@ button.addEventListener('mousemove', (e) => {
 });
 
   </script>
+
+
 
 </body>
 </html>

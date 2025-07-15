@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projets – Scroll Horizontal</title>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/motion@12.23.0/+esm"></script>
+  <script defer src="script.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    .progress {
+      position: fixed;
+      bottom: 40px;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background-color: #15BFA3;
+      transform: scaleX(0);
+      transform-origin: left;
+      z-index: 50;
+    }
+  </style>
+</head>
+<body class="bg-gray-950 text-white font-sans">
+
+  <section id="projects" class="bg-gray-950 text-white py-16 px-4 sm:px-10">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-[#15BFA3]">🚀 Mes Projets</h2>
+
+    <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Project Card 1 -->
+      <div onclick="openModal('modal1')" class="cursor-pointer bg-gray-900 hover:bg-gray-800 transition rounded-xl overflow-hidden shadow-lg group">
+        <img src="assets/Capture d’écran 2025-04-22 à 18.31.20.png" alt="News Madrid" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-[#15BFA3]">📰 News Madrid</h3>
+          <p class="text-sm text-gray-300 mt-2">Blog HTML/CSS sur le Real Madrid. Premier projet personnel.</p>
+        </div>
+      </div>
+
+      <!-- Project Card 2 -->
+      <div onclick="openModal('modal2')" class="cursor-pointer bg-gray-900 hover:bg-gray-800 transition rounded-xl overflow-hidden shadow-lg group">
+        <img src="assets/screenshot_2.png" alt="Maquette" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-[#15BFA3]">📱 Reproduction Maquette</h3>
+          <p class="text-sm text-gray-300 mt-2">Projet scolaire de reproduction pixel-perfect.</p>
+        </div>
+      </div>
+
+      <!-- Project Card 3 -->
+      <div onclick="openModal('modal3')" class="cursor-pointer bg-gray-900 hover:bg-gray-800 transition rounded-xl overflow-hidden shadow-lg group">
+        <img src="assets/Capture d’écran 2025-04-17 à 10.10.45.png" alt="Plateforme de rencontre" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-[#15BFA3]">❤️ Plateforme de rencontre</h3>
+          <p class="text-sm text-gray-300 mt-2">Application MVC en PHP pour gestion de profils utilisateurs.</p>
+        </div>
+      </div>
+
+      <!-- Project Card 4 -->
+      <div onclick="openModal('modal4')" class="cursor-pointer bg-gray-900 hover:bg-gray-800 transition rounded-xl overflow-hidden shadow-lg group">
+        <video src="assets/ede7dcdb8246454db589d7e68bab48e2.MOV" muted class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" loop autoplay></video>
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-[#15BFA3]">💬 Twitter Clone</h3>
+          <p class="text-sm text-gray-300 mt-2">Projet full-stack de réseau social avec Git en équipe.</p>
+        </div>
+      </div>
+
+      <!-- Project Card 5 -->
+      <div onclick="openModal('modal5')" class="cursor-pointer bg-gray-900 hover:bg-gray-800 transition rounded-xl overflow-hidden shadow-lg group">
+        <img src="assets/puissan4.jpeg.png" alt="Puissance 4" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-[#15BFA3]">🎮 Puissance 4</h3>
+          <p class="text-sm text-gray-300 mt-2">Jeu JS vanilla avec détection des victoires et animations DOM.</p>
+        </div>
+      </div>
+
+      <!-- Project Card 6 -->
+      <div onclick="openModal('modal6')" class="cursor-pointer bg-gray-900 hover:bg-gray-800 transition rounded-xl overflow-hidden shadow-lg group">
+        <video src="assets/67122bd3757048e78c8246c42ce86d31.MOV" muted class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" loop autoplay></video>
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-[#15BFA3]">📱 SnapchainX</h3>
+          <p class="text-sm text-gray-300 mt-2">App mobile façon Snapchat avec React Native + API sécurisée.</p>
+        </div>
+      </div>
+
+      <!-- Project Card 7 -->
+      <div onclick="openModal('modal7')" class="cursor-pointer bg-gray-900 hover:bg-gray-800 transition rounded-xl overflow-hidden shadow-lg group">
+        <img src="assets/trading-en-ligne-1500x1001.jpg" alt="TradBot" class="w-full h-48 object-cover group-hover:scale-105 transition duration-300" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-[#15BFA3]">📈 TradBot</h3>
+          <p class="text-sm text-gray-300 mt-2">Bot financier intelligent avec récupération de données API.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <div class="progress"></div>
+
+  <script>
+  function openModal(id) {
+    document.getElementById(id).classList.remove('hidden');
+    document.body.classList.add('overflow-hidden'); // empêche le scroll
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
+  }
+</script>
+
+</body>
+</html>

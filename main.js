@@ -106,11 +106,24 @@ setTimeout(() => {
 const button = document.querySelector('.button-creative');
 const glow = button.querySelector('::before');
 
-button.addEventListener('mousemove', (e) => {
-  const rect = button.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
+  const eyes = document.querySelectorAll('.eye');
 
-  button.style.setProperty('--x', `${x}px`);
-  button.style.setProperty('--y', `${y}px`); 
-});
+  document.addEventListener('mousemove', (e) => {
+    eyes.forEach(eye => {
+      const pupil = eye.querySelector('.pupil');
+      const rect = eye.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+
+      const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
+      const radius = 5; 
+      const offsetX = radius * Math.cos(angle);
+      const offsetY = radius * Math.sin(angle);
+
+      pupil.style.left = `${9 + offsetX}px`;
+      pupil.style.top = `${9 + offsetY}px`;
+    });
+  });
+
+
+  

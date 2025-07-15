@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+     
+     <style>
+       article#projects {
+    width: 100vw;
+  }
+
+  .project-scroll-outer {
+    height: 500vh;
+    position: relative;
+  }
+
+  .project-scroll-outer > div {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .project-group {
+    display: flex;
+    transition: transform 0.2s ease-out;
+  }
+
+  .project-slide {
+    flex: 0 0 100vw;
+  }
+
+  .progress {
+    position: fixed;
+    left: 0;
+    bottom: 40px;
+    height: 5px;
+    background: #15BFA3;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    z-index: 50;
+  }
+
+  /* ✅ Ajout des styles responsive */
+  @media (max-width: 1024px) {
+    .project-slide {
+      flex: 0 0 100vw;
+      max-width: 100vw;
+      padding: 1rem;
+    }
+
+    .project-group {
+      gap: 1rem;
+    }
+
+    .project-scroll-outer {
+      height: 500vh; /* Garde le scroll vertical */
+    }
+
+    .project-scroll-outer > div {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .progress {
+      display: block;
+    }
+  }
+
+     </style>
+</head>
+<body>
+    <section id="projets" class="mt-28">
+  <article id="projects">
+    <h2 class="md:text-4xl text-2xl text-[#15BFA3] font-bold text-center">Mes Projets</h2>
+
+    <!-- Conteneur de scroll vertical avec scroll horizontal interne -->
+    <section class="project-scroll-outer mt-10">
+      <div>
+        <ul class="project-group text-white w-[95%] max-w-7xl p-4 sm:p-6 rounded-xl relative flex md:gap-10 gap-6">
+          <!-- Projet 1 -->
+          <li class="project-slide bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6 shadow-xl shadow-black rounded-xl">
+            <div class="md:flex-1 flex mt-8 p-2">
+              <img src="assets/Capture d’écran 2025-04-22 à 18.31.20.png" alt="Real Madrid" class="rounded-lg w-full md:h-[300px] h-[280px] object-contain mx-auto md:mt-8" />
+            </div>
+            <div class="flex-1 flex flex-col md:justify-between mt-0 md:mt-8">
+              <div class="md:mt-8 mt-0 mb-4">
+                <h3 class="text-[#15BFA3] text-xl font-bold mb-3">📰 News Madrid <br>– Blog d'actualités sur le Real Madrid</h3>
+                <p class="text-sm leading-relaxed">Ce projet est mon premier en développement web. <br> J'ai créé un blog sur l'actualité du Real Madrid en HTML et CSS. <br> Ce site m’a permis d’appliquer mes premières compétences en structuration de contenu. Travailler sur un sujet qui me passionne a renforcé ma motivation.</p>
+              </div>
+              <div class="block mt-4">
+                <a href="https://madrid-nine.vercel.app/index.html" target="_blank" class="button-creative py-2 px-4 mt-4">Voir le site</a>
+                <a href="https://github.com/134753/blog_madrid" target="_blank" class="button-creative py-2 px-4">Voir le code sur GitHub</a> 
+              </div>
+            
+            </div>
+          </li>
+
+          <!-- Projet 3 -->
+          <li class="project-slide bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6 shadow-xl shadow-black rounded-xl">
+            <div class="flex-1 mt-12">
+              <img src="assets/Capture d’écran 2025-04-17 à 10.10.45.png" alt="PLateforme de rencontre" class="rounded-lg w-full max-h-[250px] sm:max-h-[300px] object-contain mx-auto mt-10" />
+            </div>
+            <div class="flex-1 flex flex-col justify-between mt-8">
+              <div class="md:mt-8">
+                <h3 class="md:mt-4 text-[#15BFA3] text-2xl font-bold mb-3">❤️ Plateforme de rencontre</h3>
+                <p class="text-sm leading-relaxed">Dans le cadre d’un projet scolaire, j’ai développé une plateforme de rencontre type Meetic. <br> Elle inclut l’inscription, la connexion sécurisée et l’affichage dynamique des profils. Le back-end a été réalisé en PHP avec le modèle MVC. <br> Ce projet m’a appris à structurer une application web dynamique. J’y ai compris les bases des interactions client-serveur. Il m’a aussi familiarisé avec l’architecture MVC.</p>
+              </div>
+              <div class="">
+                <a href="https://github.com/134753/Projet_meetic" target="_blank" class="button-creative py-2 px-4">Voir le code sur GitHub</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Projet 4 -->
+          <li class="project-slide bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6 shadow-xl shadow-black rounded-xl">
+            <div class="flex-1 mt-12">
+              <video src="assets/ede7dcdb8246454db589d7e68bab48e2.MOV" alt="Twitter Clone" class="rounded-lg w-full object-contain mx-auto mt-10" 
+              controls 
+              autoplay 
+              muted 
+              loop>
+              </video>
+            </div>
+            <div class="flex-1 flex flex-col justify-between mt-8">
+              <div>
+                <h3 class="text-[#15BFA3] text-2xl font-bold mb-3">Réseau Social – Twitter Clone</h3>
+                <p class="text-sm leading-relaxed">Ce projet avait pour objectif de concevoir une plateforme sociale inspirée de Twitter, avec des fonctionnalités clés comme la publication de messages, la création de comptes, le fil d’actualité, et les interactions entre utilisateurs.
+                Ce projet m’a permis de renforcer mes compétences en développement full stack, mais aussi de découvrir les bonnes pratiques du travail en groupe : gestion de version, répartition des tâches, résolution de conflits Git, et communication efficace.</p>
+              </div>
+              <div class="">
+                <a href="https://github.com/134753/Projet_Twitter" target="_blank" class="button-creative py-2 px-4">Voir le code sur GitHub</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Projet 5 -->
+          <li class="project-slide bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6 shadow-xl shadow-black rounded-xl">
+            <div class="flex-1 mt-8">
+              <img src="assets/puissan4.jpeg.png" alt="Puissance 4" class="rounded-lg w-full h-[280px] object-contain mx-auto mt-8" />
+            </div>
+            <div class="flex-1 flex flex-col justify-between mt-8">
+              <div>
+                <h3 class="text-[#15BFA3] text-2xl font-bold mb-3">🎮 Jeu Puissance 4</h3>
+                <p class="text-sm leading-relaxed">Dans ce projet, j’ai développé une version interactive du célèbre jeu Puissance 4, en JavaScript vanilla (pur, sans framework). L’objectif principal était de manipuler le DOM dynamiquement, gérer les événements utilisateurs et implémenter la logique de jeu complète : alternance des tours, placement des jetons, détection des victoires horizontales, verticales et diagonales.</p>
+              </div>
+              <div class="">
+                <a href="https://puissance4134753.vercel.app" target="_blank" class="button-creative py-2 px-4">Jouer</a>
+                <a href="https://github.com/134753/puissance4" target="_blank" class="button-creative py-2 px-4">Voir le code sur GitHub</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- Projet 6 -->
+          <li class="project-slide bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6 shadow-xl shadow-black rounded-xl">
+            <div class="flex-1 mt-8">
+              <video 
+              src="assets/67122bd3757048e78c8246c42ce86d31.MOV" 
+              alt="SnapchainX preview" 
+              class="rounded-lg w-full max-h-[350px] object-contain mx-auto mt-8" 
+              controls 
+              autoplay 
+              muted 
+              loop>
+              </video>
+            </div>
+  
+            <div class="flex-1 flex flex-col justify-between mt-8">
+              <div>
+                <h3 class="text-[#15BFA3] text-2xl font-bold mb-3">📱 SnapchainX – App mobile inspirée de Snapchat</h3>
+                <p class="text-sm leading-relaxed">
+                  SnapchainX est une application mobile développée avec React Native (Expo) qui permet :
+                  <ul class="list-disc list-inside mt-2 text-sm">
+                    <li>de prendre des photos avec la caméra native</li>
+                    <li>de basculer entre caméra avant/arrière</li>
+                    <li>d’enregistrer et envoyer les snaps à ses amis via API</li>
+                    <li>de visualiser ses amis et gérer ses snaps</li>
+                  </ul> <br>
+                  L'application est testable sur Expo Go.
+                </p>
+              </div>
+  
+              <div class="mt-4">
+                <a href="https://github.com/134753/snapchainx" target="_blank" class="button-creative py-2 px-4">Voir le code sur GitHub</a>
+              </div>
+            </div>
+          </li>
+
+          <li class="project-slide bg-gray-900 text-white w-[95%] max-w-3xl p-4 sm:p-6 rounded-xl relative flex flex-col md:flex-row gap-4 sm:gap-6 shadow-xl shadow-black rounded-xl">
+              <div class="flex-1 mt-4">
+                <img src="assets/trading-en-ligne-1500x1001.jpg" alt="TradBot" class="rounded-lg w-full max-h-[250px] sm:max-h-[300px] object-contain mx-auto" />
+              </div>
+            <div class="flex-1 flex flex-col justify-between mt-8">
+                <div>
+                  <h3 class="text-[#15BFA3] text-2xl font-bold mb-3">📈 TradBot – Bot de suivi et d’analyse financière (en cours)</h3>
+                  <p class="text-sm leading-relaxed">TradBot est un projet personnel en cours de développement, visant à créer un assistant intelligent capable de récupérer, analyser et traiter des données financières en temps réel. Grâce à des APIs comme Yahoo Finance ou Forex, le bot collecte des informations sur les marchés (cours des devises, actions, indicateurs, etc.) et les analyse selon des logiques personnalisées.</p>
+                </div>
+                <div class="">
+                    <a href="https://github.com/134753/Tradbot" target="_blank" class="button-creative py-2 px-4">Voir le code sur GitHub</a>
+                </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </article>
+</section>
+
+ <script type="module">
+  import { animate, scroll } from "https://cdn.jsdelivr.net/npm/motion@12.23.0/+esm";
+
+  const items = document.querySelectorAll(".project-slide");
+  const slideWidth = window.innerWidth;
+  const totalWidth = (items.length - 1) * slideWidth;
+
+  // Scroll horizontal animé
+  scroll(
+    animate(".project-group", {
+      transform: ["none", `translateX(-${totalWidth}px)`],
+    }),
+    {
+      target: document.querySelector(".project-scroll-outer"),
+      axis: "y",
+    }
+  );
+
+  // Barre de progression
+  scroll(
+    animate(".progress", { scaleX: [0, 1] }),
+    {
+      target: document.querySelector(".project-scroll-outer"),
+    }
+  );
+</script>
+</body>
+</html>
