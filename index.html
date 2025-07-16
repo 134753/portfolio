@@ -705,27 +705,30 @@
   import { animate, scroll } from "https://cdn.jsdelivr.net/npm/motion@12.23.0/+esm";
 
   const items = document.querySelectorAll(".project-slide");
+  const isMobile = window.innerWidth <= 768;
 
-  // Animation du scroll horizontal
-  scroll(
-    animate(".project-group", {
-      transform: ["none", `translateX(-${(items.length - 1) * 75}vw)`],
-    }),
-    {
-      target: document.querySelector(".project-scroll-outer"),
-      axis: "y",
-    }
-  );
+  if (!isMobile) {
+    // Effet de scroll horizontal activé uniquement sur desktop
+    scroll(
+      animate(".project-group", {
+        transform: ["none", `translateX(-${(items.length - 1) * 75}vw)`],
+      }),
+      {
+        target: document.querySelector(".project-scroll-outer"),
+        axis: "y",
+      }
+    );
 
-  // Barre de progression
-  scroll(
-  animate(".progress", { scaleX: [0, 1] }),
-  {
-    target: document.querySelector(".project-scroll-outer"),
+    // Barre de progression (aussi desktop only)
+    scroll(
+      animate(".progress", { scaleX: [0, 1] }),
+      {
+        target: document.querySelector(".project-scroll-outer"),
+      }
+    );
   }
-);
-
 </script>
+
 
     
 </body>
